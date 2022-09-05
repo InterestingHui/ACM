@@ -1,0 +1,3267 @@
+1.标准开始模板、通用模板、基础模板、常用模板、惯用模板
+//#pragma GCC optimize(3)
+#include<bits/stdc++.h>
+#define SZ(x) ((int)x.size())
+#define uni(x) sort(all(x)),x.resize(unique(all(x))-x.begin());
+#define GETPOS(c,x) (lower_bound(all(c),x)-c.begin())
+#define lown1(x,val) low(in(x),val)-x
+#define lowm1(x,val) low(im(x),val)-x
+#define low1(x,nums,val) low(x+1,x+nums+1,val)-x
+#define mst(x,val) memset((x),val,sizeof((x)))
+#define ls rt<<1
+#define rs rt<<1|1
+#define lson rt<<1,l,M
+#define rson rt<<1|1,M+1,r
+#define PI acos(-1)
+#define MM int M=(l+r)>>1;
+#define fu(i,r,t) for(int i=r;i<=t;i++)
+#define fd(i,r,t) for(int i=r;i>=t;i--)
+#define fh(i,be,e) for(int i=head[be];~i;i=e[i].next)
+#define fa(i,V) for(auto i:V)
+#define far(i,V) for(auto &i:V)
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define lcm(a,b) ((a)*(b))/__gcd(a,b)
+#define cp(i,ans) printf("%.if",ans);
+#define cpp(i,ans) cout<<setprecision(i)<<fixed<<ans<<endl;
+#define ppb pop_back
+#define ppf pop_front
+#define pb push_back
+#define pf push_front
+#define pq priority_queue
+#define lowbit(x) ((x)&(-x))
+#define all(V) V.begin(),V.end()
+#define ms multiset
+#define mod(x) (((x)<0)?(x)%mum+mum:(x)%mum)
+#define vc vector
+#define vct vector<int>
+#define SET set<int>
+#define dq deque<int>
+#define out(i) cout<<(i)<<endl;
+#define fi first
+#define se second
+#define fun(i) fu(i,1,n)
+#define fut(i) fu(i,1,t)
+#define fum(i) fu(i,1,m)
+#define ld long double
+#define umap unordered_map
+#define Umap unordered_map<int, int, custom_hash>
+#define P pair<int,int>
+#define mk make_tuple
+#define eps 1e-6
+//Remember cancel"#define endl '\n'" in interactive questions or use "<<flush"
+#define endl '\n'
+#define low lower_bound
+#define upp upper_bound
+#define yn(key) out(key?"YES":"NO")
+//#define yn(key) out(key?"Yes":"No")
+#define in(i) i+1,i+1+n
+#define im(i) i+1,i+1+m
+#define ik(i,k) i+1,i+1+k
+#define bffs(i) __builtin_ffs(i)
+#define bcount(i) __builtin_popcount(i)
+#define bone(i) ((1<<i)-1)
+#define db double
+#define ll long long
+#define got(container,num) get<num-1>(container)
+#define int long long
+#define print(a,n) fun(i)cout<<a[i]<<(i!=n?' ':endl);
+#define outcase(x) cout<<"Case #"<<(++case_of_T)<<": "<<(x)<<endl;
+#define ptcase(x) printf("Case #%d: %d\n",++case_of_T,x);
+#define plcase(x) printf("Case #%lld: %lld\n",++case_of_T,x);
+using namespace std;
+struct custom_hash { static uint64_t splitmix64(uint64_t x) { x += 0x9e3779b97f4a7c15;x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;x = (x ^ (x >> 27)) * 0x94d049bb133111eb;return x ^ (x >> 31); }size_t operator()(uint64_t x) const { static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();return splitmix64(x + FIXED_RANDOM); }};
+//Remember to cancel the line below and declare INT=INT_MAX/2; when you want to change long to int
+const int INF=LLONG_MAX/4,SINF=0x3f3f3f3f,Lim=1<<20,MINF=LLONG_MAX;
+//const int INF=INT_MAX/4,SINF=0x3f;
+// use C:printf("%.16f", x);  ->  printf("%.10f", x); can accelerate the program
+const int dx[]={0,0,-1,1},dy[]={-1,1,0,0};//down up left right
+const int maxn=1e6+1e5;
+int mum=1e9+7;
+//const int mum=998244353;
+int n,m,a[maxn],b[maxn],ans,case_of_T;
+
+void solve()
+{
+
+    return ;
+}
+main()
+{
+    IOS
+    int T=1;
+    //cin>>T;
+    while(T--)solve();
+    return 0;
+}
+
+
+//训练模板
+#include<bits/stdc++.h>
+using namespace std;
+const int maxn=2e5+5;
+int a[maxn];
+vector<int>have;
+unordered_map<int,int>gget;
+int main()
+{
+    int n;scanf("%d",&n);
+    for(int i=1;i<=n;i++)scanf("%d",&a[i]),gget[a[i]]=1;
+    sort(a+1,a+n+1);
+    for(int i=1;i<=n;i++)printf("%d ",a[i]);
+    putchar('\n');
+    int m;scanf("%d",&m);
+    for(int i=1;i<=m;i++)have.push_back(a[i]);
+    sort(have.begin(),have.end());
+    for(auto i:have)printf("%d ",i);
+    putchar('\n');
+    return 0;
+}
+/*
+4
+5 3 2 6
+3
+ */
+
+//
+
+最简模板
+#include<bits/stdc++.h>
+#define fu(i,r,t) for(int i=r;i<=t;i++)
+#define fd(i,r,t) for(int i=r;i>=t;i--)
+#define fa(i,V) for(auto i:V)
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define all(V) V.begin(),V.end()
+#define vct vector<int>
+#define SET set<int>
+#define out(i) cout<<(i)<<endl;
+#define fun(i) fu(i,1,n)
+#define fum(i) fu(i,1,m)
+#define endl '\n'
+#define in(i) i+1,i+1+n
+#define int long long
+using namespace std;
+const int INF=LLONG_MAX/4,SINF=0x3f3f3f3f,Lim=1<<20,MINF=LLONG_MAX;
+//const int INF=INT_MAX/4,SINF=0x3f;
+const int maxn=1e6+1e5;
+int mum=1e9+7;
+//const int mum=998244353;
+int n,m,t,a[maxn],b[maxn],ans,case_of_T;
+
+void solve()
+{
+
+    return ;
+}
+main()
+{
+    IOS
+    int T=1;
+    //cin>>T;
+    while(T--)solve();
+    return 0;
+}
+
+418.高精度加减乘除法（大数运算，数组存放，结构体运载）模板
+//如果要用高精度模板，就必须注释掉#define int long long
+//compare比较函数：相等返回0，大于返回大于0，小于返回小于0
+//注意！！这里不是大于就返回1而是返回一个正数！所以是和0比较而不是判断是否等于1！！！！
+int compare(string str1,string str2)
+{
+    if(str1.length()>str2.length()) return 1;
+    else if(str1.length()<str2.length())  return -1;
+    else return str1.compare(str2);
+}
+//高精度加法
+//只能是两个正数相加
+string add(string str1,string str2)//高精度加法
+{
+    string str;
+    int len1=str1.length();
+    int len2=str2.length();
+    //前面补0，弄成长度相同
+    if(len1<len2)
+    {
+        for(int i=1;i<=len2-len1;i++)
+           str1="0"+str1;
+    }
+    else
+    {
+        for(int i=1;i<=len1-len2;i++)
+           str2="0"+str2;
+    }
+    len1=str1.length();
+    int cf=0;
+    int temp;
+    for(int i=len1-1;i>=0;i--)
+    {
+        temp=str1[i]-'0'+str2[i]-'0'+cf;
+        cf=temp/10;
+        temp%=10;
+        str=char(temp+'0')+str;
+    }
+    if(cf!=0)  str=char(cf+'0')+str;
+    return str;
+}
+//高精度减法
+//只能是两个正数相减，而且要大减小
+string sub(string str1,string str2)//高精度减法
+{
+    string str;
+    int tmp=str1.length()-str2.length();
+    int cf=0;
+    for(int i=str2.length()-1;i>=0;i--)
+    {
+        if(str1[tmp+i]<str2[i]+cf)
+        {
+            str=char(str1[tmp+i]-str2[i]-cf+'0'+10)+str;
+            cf=1;
+        }
+        else
+        {
+            str=char(str1[tmp+i]-str2[i]-cf+'0')+str;
+            cf=0;
+        }
+    }
+    for(int i=tmp-1;i>=0;i--)
+    {
+        if(str1[i]-cf>='0')
+        {
+            str=char(str1[i]-cf)+str;
+            cf=0;
+        }
+        else
+        {
+            str=char(str1[i]-cf+10)+str;
+            cf=1;
+        }
+    }
+    str.erase(0,str.find_first_not_of('0'));//去除结果中多余的前导0
+    return str;
+}
+//高精度乘法
+//只能是两个正数相乘
+string mul(string str1,string str2)
+{
+    string str;
+    int len1=str1.length();
+    int len2=str2.length();
+    string tempstr;
+    for(int i=len2-1;i>=0;i--)
+    {
+        tempstr="";
+        int temp=str2[i]-'0';
+        int t=0;
+        int cf=0;
+        if(temp!=0)
+        {
+            for(int j=1;j<=len2-1-i;j++)
+              tempstr+="0";
+            for(int j=len1-1;j>=0;j--)
+            {
+                t=(temp*(str1[j]-'0')+cf)%10;
+                cf=(temp*(str1[j]-'0')+cf)/10;
+                tempstr=char(t+'0')+tempstr;
+            }
+            if(cf!=0) tempstr=char(cf+'0')+tempstr;
+        }
+        str=add(str,tempstr);
+    }
+    str.erase(0,str.find_first_not_of('0'));
+    return str;
+}
+//高精度除法
+//两个正数相除，商为quotient,余数为residue
+//需要高精度减法和乘法
+//注意！！如果是整除的时候，返回的residue是""而不是"0"!!!所以要取余数的话要特殊判断！
+void div(string str1,string str2,string &quotient,string &residue)
+{
+    quotient=residue="";//清空
+    if(str2=="0")//判断除数是否为0
+    {
+        quotient=residue="ERROR";
+        return;
+    }
+    if(str1=="0")//判断被除数是否为0
+    {
+        quotient=residue="0";
+        return;
+    }
+    int res=compare(str1,str2);
+    if(res<0)
+    {
+        quotient="0";
+        residue=str1;
+        return;
+    }
+    else if(res==0)
+    {
+        quotient="1";
+        residue="0";
+        return;
+    }
+    else
+    {
+        int len1=str1.length();
+        int len2=str2.length();
+        string tempstr;
+        tempstr.append(str1,0,len2-1);
+        for(int i=len2-1;i<len1;i++)
+        {
+            tempstr=tempstr+str1[i];
+            tempstr.erase(0,tempstr.find_first_not_of('0'));
+            if(tempstr.empty())
+              tempstr="0";
+            for(char ch='9';ch>='0';ch--)//试商
+            {
+                string str,tmp;
+                str=str+ch;
+                tmp=mul(str2,str);
+                if(compare(tmp,tempstr)<=0)//试商成功
+                {
+                    quotient=quotient+ch;
+                    tempstr=sub(tempstr,tmp);
+                    break;
+                }
+            }
+        }
+        residue=tempstr;
+    }
+    quotient.erase(0,quotient.find_first_not_of('0'));
+    if(quotient.empty()) quotient="0";
+}
+
+428.模板:检查一个数是否是素数，如果是，返回1，反之返回0：
+int isprime(int n)
+{
+    if(n==1)return 0;
+    float n_sqrt;
+    if(n==2 || n==3) return 1;
+    if(n%6!=1 && n%6!=5) return 0;
+    n_sqrt=floor(sqrt((float)n));
+    for(int i=5;i<=n_sqrt;i+=6)  if(n%(i)==0 | n%(i+2)==0) return 0;
+    return 1;
+}
+
+449.二叉树三种遍历方法的代码实现，以printf代表对当前节点进行操作：
+开两个页面自己对比看看:https://www.cnblogs.com/vipchenwei/p/7562567.html
+void qian(int n)//前序遍历,从根节点开始
+{
+    printf("%d",a[n]);
+    if(a[2*n+1])qian(2*n+1);//左子树
+    if(a[2*n+2])qian(2*n+2);//右子树
+}
+void zhong(int n)//中序遍历,从最左的那个孩子开始
+//如果到达一个新的树的根节点，则马上转移至这棵树的最左的那个孩子，最左指左下角
+{
+    if(a[2*n+1])qian(2*n+1);//左子树
+    printf("%d",a[n]);
+    if(a[2*n+2])qian(2*n+2);//右子树
+}
+void hou(int n)//后序遍历,从最左的那个孩子开始
+//如果到达一个新的树的根节点，则马上转移至这棵树的最左的那个孩子，最左指左下角
+{
+    if(a[2*n+1])qian(2*n+1);//左子树
+    if(a[2*n+2])qian(2*n+2);//右子树
+    printf("%d",a[n]);
+}
+
+其它题的运作顺序也和上面三个函数的语句安排顺序大致相同！
+
+在main函数汇总给三个函数传根节点的下标（1 or 0），就实现三种遍历了.
+如果不采用这种方法，至少要认清以下几点:
+1.前序遍历就是对于一棵二叉树，从根节点开始，深度优先搜索（DFS），嗯，先序就是DFS
+2.中序遍历就是从左至右(左为优先)地遍历
+3.后序遍历则是自下而上地,从左至右地遍历（下为优先)
+4.三种遍历中，只有前序遍历是路径走到哪，就输出那个结点！！，其它两种都有跳转至最左孩子的动作
+5.后序遍历严格遵守左子树输出完了输出右子树再往上回溯到根！！！所以输出的时候，前一半是左子树的，后一半-1是右子树的，最后一个是根
+
+
+474.这里成立一个专项练速组：//因为只有手速快才能第一个AC，排名靠前！！手速快的关键是不拼错！
+连正确打某个代码的速度和正确率
+比如：要训练打return，就要求连续打50个return不间断、不卡顿、没有拼错过，就算过关
+
+待训练代码：//都是在不补全模式下练习的！
+except
+times
+cout<<endl;
+descend
+ascend
+
+554.欧拉回路、欧拉路径（也叫欧拉通路）——能一笔画的图
+————————————————————————————————————————————————————————————————————————————————————————————
+|           |        无向图	        |                      有向图                           |
+|  欧拉回路  |   所有结点度数为偶数	    |               所有结点入度等于出度                      |
+|  欧拉通路  | 恰有两个结点度数为奇数   |  恰有一个结点入度比出度多1,恰有一个结点出度比入度多1        |
+————————————————————————————————————————————————————————————————————————————————————————————
+(i).无向图存在欧拉回路的充要条件
+一个无向图存在欧拉回路<=>当且仅当该图所有顶点度数都为偶数,且该图是连通图。
+(ii).有向图存在欧拉回路的充要条件
+一个有向图存在欧拉回路<=>所有顶点的入度等于出度且该图是连通图。
+
+593.快速幂：（按位乘幂实现幂运算）位！
+int Pow(int a,int len)
+{
+    int num=1;
+    for(int base=a;len;len>>=1,base=base*base) if(len&1)num=num*base;
+    return num;
+}
+int Pow(int a, int b) {
+    int ans = 1, base = a;
+    while (b != 0) {
+        if (b & 1)
+            ans *= base;
+            base *= base;
+            b >>= 1;
+    }
+    return ans;
+}
+const int mum=1000000007;
+int Pow(int a,int b){//快速幂(取模数版)
+    a%=mum;
+    int ans = 1;
+    while(b)
+    {
+        if(b&1)
+            ans = (ans*a)%mum;
+        a = (a*a)%mum;
+        b/=2;
+    }
+    return ans%mum;
+}
+
+set取交集、并集
+交集：set_intersection()函数
+定义函数以方便使用:
+set<int> Intersection(SET a,SET b)
+{
+    SET j;
+    set_intersection(a.begin(),a.end(),b.begin(),b.end(),inserter(j,j.begin()));
+    return j;
+}
+//(main)
+SET h=Intersection(q,w);
+
+并集：set_union()函数
+定义函数以方便使用:
+set<int> Union(SET a,SET b)
+{
+    SET j;
+    set_union(a.begin(),a.end(),b.begin(),b.end(),inserter(j,j.begin()));
+    return j;
+}
+
+631.迭代器与下标之间的转换：
+迭代器转换成下标：distance
+distance计算第一个参数到第二个参数之间的距离。
+如果第二个参数的顺序在第一个参数前面的话,函数是会返回负值的；
+如果迭代器不在一个容器内,程序会抛出异常。
+Set p;
+p.insert(3);p.insert(1);p.insert(4);p.insert(5);//p:1 3 4 5
+auto h=p.lower_bound(1);cout<<distance(p.begin(),h);//输出0
+h=p.lower_bound(3);cout<<distance(p.begin(),h);//输出1
+h=p.lower_bound(4);cout<<distance(p.begin(),h);//输出2
+h=p.lower_bound(5);cout<<distance(p.begin(),h);//输出3
+cout<<distance(p.begin(),p.end());//输出4
+用法:
+int index=distance(容器.begin(),目标元素在容器中的迭代器)//如上例
+index就是下标(首元下标为0)；
+两注意：
+一、找迭代器最好用该语句：
+auto h=容器.lower_bound(目标元素);//注意，是auto！
+二、end（）的索引是容器的大小：
+即distance(容器.begin(),容器.end())=容器.size();
+
+
+下标转换成迭代器:advance
+advance是将第一个参数向后移动第二个参数指定个元素。
+如果第二个参数为负,则向前移动；
+如果向前或向后移动超出容器范围,则抛出异常。
+Set p;
+p.insert(3);p.insert(1);p.insert(4);p.insert(5);
+auto it1=p.begin();auto it2=p.begin();auto it3=p.begin();
+advance(it1,1);cout<<*it1;//输出3
+advance(it2,2);cout<<*it2;//输出4
+advance(it3,3);cout<<*it3;//输出5
+用法：
+先用一个参量指向容器的开始，而且用auto声明最好（因为快速）：
+auto it=容器.begin();//此时*it就是容器的首元素
+然后如下用advance
+advance(it,index);//index就是你想输出的元素的下标
+此时*it就是你想要的元素啦！
+eg：advance(it,3)
+则指向的是容器中的第4个元素！（index+1，符合从0开始计数的原则）
+
+当然你完全可以为这两个转换定义函数：
+迭代器转下标：
+略，根据实际情况自己拟定
+eg：
+int Distance_p(int aim)//专门针对容器p查找容器中元素下标
+{
+    auto i=p.begin();
+    auto h=p.lower_bound(aim);
+    return distance(i,h);
+}
+
+643.整型转字符串：to_string
+string类型如果要加上单个字符，且这个字符原先是整型int的，需要如下操作
+如
+int i; string k;
+则：
+k+=(char)i;//这两行不是想要的结果，因为只是将i转换成char字符，等于加入了ASCII码中值为i的字符
+k+=char(i);//这两行不是想要的结果，因为只是将i转换成char字符，等于加入了ASCII码中值为i的字符
+k+=string(i);//这两行会报错
+k+=(string)i;//这两行会报错
+所以正确的是
+k+=i+'0';//这个是对的！
+注意！！
+其实有更好的方法，因为上面说的这个方法只适用于增加一个字符
+下面这个函数可以解决任何长度的整型转字符串：
+to_string();
+int i=3;
+string k="";
+k+=to_string(i);//如果只运行这行k为3
+k+=to_string(i*10+i);//如果只运行这行k为33
+
+654.动态规划-背包（背包九讲）
+多重背包模板
+void deal(int v,int w,int d)
+{
+    int be=1;
+    while(d>=be)
+    {
+        have.pb({be*v,be*w});
+        d-=be;
+        be<<=1;
+    }
+    if(d)have.pb({d*v,d*w});
+}
+
+分组背包的遍历有点区别： 先遍历每个组，然后遍历容量j， 最后才是遍历每个组内的各个物品！
+
+总结：
+如果对于每个决策是要么选、要么不选，则就是01背包问题， 一维数组逆序
+如果可以选择无数个，则是完全背包，一维数组顺序
+如果是有限个，则以二进制拆成一个一个，即打包起来，则对每个包就是选或者不选，所以也是01问题，一维数组逆序
+
+656.bitset是一个非常好的数据结构功能很强大
+bitset[i]是从右边往左读的切记,下标从0开始
+既可以bitset(string),一棵bitset(int)
+功能很强大:https://www.cnblogs.com/magisk/p/8809922.html
+
+分块模板:
+int len=ceil(sqrt(n));int block=len;
+fun(i)belong[i]=(i-1)/block+1;
+//第j块的左端点索引和右端点索引:int l=(j-1)*len+1,r=min(n,j*len);
+
+不要犯傻逼错误，如果题目的长度是m，就把n换成m；
+或者不要在cin>>n;之前分块，一定要在读入n之后才分块！
+
+splay-伸展树：https://www.cnblogs.com/cjyyb/p/7499020.html
+z-y-x
+
+一、旋转相邻父子结点x-y （相当于一次旋转操作)：
+void rotate(int x)//X是要旋转的节点
+{
+    int y=t[x].ff;//X的父亲
+    int z=t[y].ff;//X的祖父
+    int k=t[y].ch[1]==x;//X是Y的哪一个儿子 0是左儿子 1是右儿子
+    //注意上面这一行，实在太巧妙了，利用判断语句赋值01，而右利用01判断左右！
+    t[z].ch[t[z].ch[1]==y]=x;//Z的原来的Y的位置变为X
+    t[x].ff=z;//X的父亲变成Z
+    t[y].ch[k]=t[x].ch[k^1];//X的与X原来在Y的相对的那个儿子变成Y的儿子
+    t[t[x].ch[k^1]].ff=y;//更新父节点
+    t[x].ch[k^1]=y;//X的 与X原来相对位置的儿子变成 Y
+    t[y].ff=x;//更新父节点
+}
+
+二、旋转结点任意目标位置：（要注意根结点是什么！在这里是0！）
+void splay(int x,int goal)//将x旋转为goal的儿子，如果goal是0则旋转到根
+{
+    while(t[x].ff!=goal)//一直旋转到x成为goal的儿子
+    {
+        int y=t[x].ff,z=t[y].ff;//父节点祖父节点
+        if(z!=goal)//如果Y不是根节点，则分为上面两类来旋转
+            (t[z].ch[0]==y)^(t[y].ch[0]==x)?rotate(x):rotate(y);//这一行太巧妙了！
+            //这就是之前对于x和y是哪个儿子的讨论
+        rotate(x);//无论怎么样最后的一个操作都是旋转x
+    }
+    if(goal==0)root=x;//如果goal是0，则将根节点更新为x
+}
+
+其它操作如下：
+
+三、查找find操作：
+从根节点开始，左侧都比他小，右侧都比他大，
+所以只需要相应的往左/右递归
+如果当前位置的val已经是要查找的数
+那么直接把他Splay到根节点，方便接下来的操作
+类似于二分查找，
+所以时间复杂度O(logn)
+
+inline void find(int x)//查找x的位置，并将其旋转到根节点
+{
+    int u=root;
+    if(!u)return;//树空
+    while(t[u].ch[x>t[u].val]&&x!=t[u].val)//当存在儿子并且当前位置的值不等于x
+        u=t[u].ch[x>t[u].val];//跳转到儿子，查找x的父节点
+    splay(u,0);//把当前位置旋转到根节点
+}
+
+四、Insert操作
+往Splay中插入一个数
+类似于Find操作，只是如果是已经存在的数，就可以直接在查找到的节点的进行计数
+如果不存在，在递归的查找过程中，会找到他的父节点的位置，
+然后就会发现底下没有啦。。。
+所以这个时候新建一个节点就可以了
+
+inline void insert(int x)//插入x
+{
+  int u=root,ff=0;//当前位置u，u的父节点ff
+  while(u&&t[u].val!=x)//当u存在并且没有移动到当前的值
+  {
+      ff=u;//向下u的儿子，父节点变为u
+      u=t[u].ch[x>t[u].val];//大于当前位置则向右找，否则向左找
+  }
+  if(u)//存在这个值的位置
+      t[u].cnt++;//增加一个数
+  else//不存在这个数字，要新建一个节点来存放
+  {
+      u=++tot;//新节点的位置
+      if(ff)//如果父节点非根
+          t[ff].ch[x>t[ff].val]=u;
+      t[u].ch[0]=t[u].ch[1]=0;//不存在儿子
+      t[tot].ff=ff;//父节点
+      t[tot].val=x;//值
+      t[tot].cnt=1;//数量
+      t[tot].size=1;//大小
+  }
+  splay(u,0);//把当前位置移到根，保证结构的平衡。注意前面因为更改了子树大小，所以这里必须Splay上去进行pushup保证size的正确。
+}
+
+五、前驱/后继操作Next
+首先就要执行Find操作
+把要查找的数弄到根节点
+然后，以前驱为例
+先确定前驱比他小，所以在左子树上
+然后他的前驱是左子树中最大的值
+所以一直跳右结点，直到没有为止
+找后继反过来就行了
+
+inline int Next(int x,int f)//查找x的前驱(0)或者后继(1)
+{
+  find(x);
+  int u=root;//根节点，此时x的父节点（存在的话）就是根节点
+  if(t[u].val>x&&f)return u;//如果当前节点的值大于x并且要查找的是后继
+  if(t[u].val<x&&!f)return u;//如果当前节点的值小于x并且要查找的是前驱
+  u=t[u].ch[f];//查找后继的话在右儿子上找，前驱在左儿子上找
+  while(t[u].ch[f^1])u=t[u].ch[f^1];//要反着跳转，否则会越来越大（越来越小）
+  return u;//返回位置
+}
+
+六、删除操作
+现在就很简单啦
+首先找到这个数的前驱，把他Splay到根节点
+然后找到这个数后继，把他旋转到前驱的底下
+比前驱大的数是后继，在右子树
+比后继小的且比前驱大的有且仅有当前数
+在后继的左子树上面，
+因此直接把当前根节点的右儿子的左儿子删掉就可以啦
+
+inline void Delete(int x)//删除x
+{
+  int last=Next(x,0);//查找x的前驱
+  int next=Next(x,1);//查找x的后继
+  splay(last,0);splay(next,last);
+  //将前驱旋转到根节点，后继旋转到根节点下面
+  //很明显，此时后继是前驱的右儿子，x是后继的左儿子，并且x是叶子节点
+  int del=t[next].ch[0];//后继的左儿子
+  if(t[del].cnt>1)//如果超过一个
+  {
+      t[del].cnt--;//直接减少一个
+      splay(del,0);//旋转
+  }
+  else
+      t[next].ch[0]=0;//这个节点直接丢掉（不存在了）
+}
+
+七、查找第K大的数
+从当前根节点开始，检查左子树大小
+因为所有比当前位置小的数都在左侧
+如果左侧的数的个数多余K，则证明第K大在左子树中
+否则，向右子树找，找K-左子树大小-当前位置的数的个数
+记住特判K恰好在当前位置
+
+inline int kth(int x)//查找排名为x的数
+{
+  int u=root;//当前根节点
+  if(t[u].size<x)//如果当前树上没有这么多数
+      return 0;//不存在
+  while(1)
+  {
+      int y=t[u].ch[0];//左儿子
+      if(x>t[y].size+t[u].cnt)
+      //如果排名比左儿子的大小和当前节点的数量要大
+      {
+          x-=t[y].size+t[u].cnt;//数量减少
+          u=t[u].ch[1];//那么当前排名的数一定在右儿子上找
+      }
+      else//否则的话在当前节点或者左儿子上查找
+          if(t[y].size>=x)//左儿子的节点数足够
+              u=y;//在左儿子上继续找
+          else//否则就是在当前根节点上
+              return t[u].val;
+  }
+}
+
+709.set的逆序遍历：
+T.insert({1});T.insert({2});T.insert({3});
+for(auto I:T)cout<<I.v<<endl;//1 2 3
+for(auto it=T.rbegin();it!=T.rend();it++)cout<<(*it).v<<endl;//3 2 1//此为逆序遍历
+
+720.构建log2n向下取整函数：
+int lg[maxn];
+lg[0]=-1;//小心啊，这一行千万不能落！
+fu(i,1,maxn)lg[i]=lg[i>>1]+1;
+
+.带权并查集1
+int Find(int u)//也是模板！
+{
+    int Begin=p[u];
+    if(p[u]!=u)p[u]=Find(p[u]);
+    same[u]=(same[Begin]^same[u]);
+    return p[u];
+}
+
+带权并查集2:求和
+int Find(int x)
+{
+    if (x == p[x]) return x;
+    p[x] = Find(p[x]);
+    num[p[x]]+=num[x];//记录权值
+    num[x]=0;
+    return p[x];
+}
+
+.优先队列-greater
+priority_queue<int,vector<int>,greater<int> >T;//从小到大排列
+
+.并查集最优写法：（最简并查集，并查集最简）
+int Find(int x) { return p[x] == x ? p[x] :p[x] = Find(p[x]); } // 回归时压缩路径
+
+.链式前向星模板
+//注意别忘记head数组要初始化为-1！
+//初始化记得把cnt也初始化为0
+struct edge{
+	int to,val,next;//from
+}e[maxn];
+int cnt,head[maxn<<1];
+void add(int x,int y,int c){
+	e[cnt]={y,c,head[x]};//这一行实现了简洁！
+	head[x]=cnt++;
+}
+
+.交互题输出模板
+cout<<"? 1 2"<<endl;
+fflush(stdout);//这是关键语句
+推荐用这种:
+cout<<..<<endl<<flush;
+
+.LCA及其dfs模板(待检验)
+
+for(int i=1;i<=n;i++) //第一步:预先算出log_2(i)+1的值，用的时候直接调用就可以了
+lg[i]=lg[i-1]+(1<<lg[i-1]==i);  //看不懂的可以手推一下
+预处理完毕后，我们就可以去找它的LCA了，为了让它跑得快一些，我们可以加一个常数优化(来自洛谷提高组讲义)
+
+void dfs(int f,int fath) //第二步:f表示当前节点，fath表示它的父亲节点
+{
+    depth[f]=depth[fath]+1;
+    Fa[f][0]=fath;
+    for(int i=1;(1<<i)<=depth[f];i++)
+      Fa[f][i]=Fa[Fa[f][i-1]][i-1]; //这个转移可以说是算法的核心之一
+                                    //意思是f的2^i祖先等于f的2^(i-1)祖先的2^(i-1)祖先
+                                    //2^i=2^(i-1)+2^(i-1)
+    for(int i=head[f];i;i=e[i].nex)
+      if(e[i].t!=fath)
+        dfs(e[i].t,f);
+}
+
+int lca(int x,int y)//第三步,求出LCA
+{
+    if(depth[x]<depth[y]) //用数学语言来说就是：不妨设x的深度 >= y的深度
+    swap(x,y);
+    while(depth[x]>depth[y]) x=Fa[x][lg[depth[x]-depth[y]]-1]; //先跳到同一深度
+    if(x==y) return x; //如果x是y的祖先，那他们的LCA肯定就是x了
+    for(int k=lg[depth[x]]-1;k>=0;k--) //不断向上跳（lg就是之前说的常数优化）
+    if(Fa[x][k]!=Fa[y][k])  //因为我们要跳到它们LCA的下面一层，所以它们肯定不相等，如果不相等就跳过去。
+      x=Fa[x][k], y=Fa[y][k];
+    return Fa[x][0];  //返回父节点
+}
+
+.对map容器进行find
+fu(i,1,3)T[i]=1;
+auto t=T.find(2);
+则(*t).first=2,(*t).second=1;
+也就是说对map进行find,是对key进行find，即第一个关键字，而且同样是返回迭代器。
+
+.增加栈的上限，防止栈溢出成RE
+#pragma comment(linker, "/STACK:1024000000,1024000000")
+
+.全排列函数：
+next_permutation（start,end）当前排列的下一个排列，
+prev_permutation（start,end）当前排列的上一个排列。
+
+.保留n位小数：
+不一定保留：cout<<(double)left/1000.0;//如果是整数的时候不会保留
+cout<<fixed<<setprecision(3)<<(double)left/1000.0;//任意情况下都会保留
+
+805.01分数规划-最优比例生成树之二分：
+double L=0.0,R=100.0;
+while(R-L>1e-6){
+    double mid=(L+R)/2;
+    if(!can(mid))L=mid;
+    else R=mid;
+}
+
+.平时训练的时候多去学习别人优秀的代码！
+
+中国剩余定理：
+适用于求解线性同余方程组，例：
+x≡2（mod3)
+x≡3（mod5)
+x≡2（mod7)
+求任意一个满足条件的x
+
+即求∑x≡ai(mod mi)的任意满足条件的x
+
+首先切记最终x=∑ai*ti*Mi
+所以第一步先去求ti
+什么是ti与Mi
+
+Mi就是非本模数之积
+如x≡2（mod3)，则对于模数3而言，5和7是除此之外的模数，所以将它们相乘就是Mi：
+M1=5*7=35;
+M2=3*7=21;
+M3=3*5=15;
+
+ti就是 数论倒数，即这样的一个ti使得ti*Mi≡1(mod mi)
+求解的过程就是:
+t1*35≡1(mod 3),观察得t1=2
+t2*21≡1(mod 5),观察得t2=1
+t3*15≡1(mod 7),观察得t3=1
+
+则x就是2*2*35+1*3*21+1*2*15=233，经检验，满足题意
+
+注意，中国剩余定理的适用条件是所给方程一定是同余方程。
+
+816.一些有用的数论定理：
+
+一、威尔逊定理
+若p是素数,则(p-1)!≡-1(mod p )
+
+817.积性函数
+一、μ(n):莫比乌斯函数
+
+二、φ(n):欧拉函数——表示小于n的正整数中与n互质的数的个数
+有以下有用推论:
+1.若p为质数，φ(p)=p-1,且有φ(p^k)=p^k-p^(k-1)
+eg:φ(81)=φ(3^4)=3^4-3^3=81-27=54
+2.设n=p1^(a1) * p2^(a2) * p3^(a3)... *pk^(ak),则φ(n)=n*(1-1/p1)*(1-1/p2)...(1-1/pk)
+这很有用，可以让我们在O(sqrt(n))的时间复杂度内求出一个数n的欧拉函数:
+方法:（纯手打，待检验）
+int Euler(int x)
+{
+    int res=x;
+    fu(i,2,x)
+    {
+        if(x%i==0)res/=i,res*=(i-1);
+        while(x%i==0)x/=i;
+    }
+    if(x>1)res/=x,res*=(x-1);
+    return res;
+}
+
+最高效的代码(逆元模板)：
+int inv(int i,int x) { if(i==1)return 1;return (x-x/i)*inv(x%i,x)%x; }//i在mod x的意义下的逆元
+固定模数版：
+int inv(int i) { if(i==1)return 1;return (mum-mum/i)*inv(mum%i)%mum; }//i在mod x的意义下的逆元
+
+扩展欧几里得模板：
+int ext_gcd(int a,int b,int &x,int &y){ if(b==0){x=1;y=0;return a;}int q=a/b, g=ext_gcd(b,a-q*b,x,y), z=x-q*y;x=y; y=z;return g; }
+
+.排列组合模板：
+//新板|快速版
+int ff[maxn]={1},iv[maxn]={1};
+int C(int x,int y){if(y<x||x<0)return 0;return ff[y]*iv[x]%mum*iv[y-x]%mum;}
+int Pow(int a,int b){ a%=mum; int ans = 1; while(b) { if(b&1) ans = (ans*a)%mum; a = (a*a)%mum; b/=2; } return ans%mum; }
+int inv(int i) { if(i==1)return 1;return (mum-mum/i)*inv(mum%i)%mum; }//i在mod x的意义下的逆元
+void init() { for (int i = 1; i <= maxn - 10; i++) { ff[i] = ff[i - 1] * i % mum;iv[i] = iv[i-1]*inv(i)%mum; }}
+
+//用法:C(2,3)=3;
+
+//慢速版|老板(仅组合数)
+int jc[maxn];
+int ext_gcd(int a,int b,int &x,int &y){ if(b==0){x=1;y=0;return a;}int q=a/b, g=ext_gcd(b,a-q*b,x,y), z=x-q*y;x=y; y=z;return g; }
+int inv(int a){ int x,y;ext_gcd(a,mum,x,y);return (x+mum)%mum; }
+void init(int *x, int len){ x[0]=1;for(int i=1;i<len;i++)x[i]=(x[i-1]*i)%mum; }
+int C(int r,int N){ if(N<0 or N<r or r<0)return 0;return (jc[N]*inv(jc[r])%mum)*inv(jc[N-r])%mum; }
+int32_t main(){
+    //cin>>n>>m;
+    init(jc,3000);//这个是初始化阶乘数组的上限
+    //fum(i)out(C(i,n-m+1)*C(i-1,m-1)%mum)
+    return 0;
+}
+
+排列组合相关公式：
+C(0,n)+C(1,n)+C(2,n)+...+C(n,n)=Pow(2,n)
+
+.下标从1开始的数组的lower_bound的索引数（前提是排好序）
+int pos=lower_bound(sum+1,sum+n+1,x)-sum;
+
+.数位dp模板
+#include<bits/stdc++.h>
+#define fu(i,r,t) for(int i=r;i<=t;i++)
+#define fd(i,r,t) for(int i=r;i>=t;i--)
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define endl '\n'
+#define mod(p) ((p)%1000000007)
+#define int long long
+using namespace std;
+const int INF=1e17+5;
+const int maxn=5e5+5;
+int n,m,a[maxn],b[maxn],ans,sum;
+int a[20];
+int dp[20][state];//不同题目状态不同
+int dfs(int pos,/*state变量*/,bool lead/*前导零*/,bool limit/*数位上界变量*/)//不是每个题都要判断前导零
+{
+    //递归边界，既然是按位枚举，最低位是0，那么pos==-1说明这个数我枚举完了
+    if (pos==-1) return 1;/*这里一般返回1，表示你枚举的这个数是合法的，那么这里就需要你在枚举时必须每一位都要满足题目条件，也就是说当前枚举到pos位，一定要保证前面已经枚举的数位是合法的。不过具体题目不同或者写法不同的话不一定要返回1 */
+    //第二个就是记忆化(在此前可能不同题目还能有一些剪枝)
+    if (!limit && !lead &&dp[pos][state]!=-1) return dp[pos][state]; /*常规写法都是在没有限制的条件记忆化，这里与下面记录状态是对应，具体为什么是有条件的记忆化后面会讲*/
+    int up = limit ? a[pos] : 9;//根据limit判断枚举的上界up;这个的例子前面用213讲过了
+    int ans = 0;
+    //开始计数
+    for (int i = 0;i<=up;i++)//枚举，然后把不同情况的个数加到ans就可以了
+    {
+        if () ...
+        else if ()...
+        ans+=dfs(pos-1,/*状态转移*/, lead && i==0, limit && i==a[pos]) //最后两个变量传参都是这样写的
+        /*这里还算比较灵活，不过做几个题就觉得这里也是套路了
+        大概就是说，我当前数位枚举的数是i，然后根据题目的约束条件分类讨论
+        去计算不同情况下的个数，还有要根据state变量来保证i的合法性，比如题目
+        要求数位上不能有62连续出现,那么就是state就是要保存前一位pre,然后分类，
+        前一位如果是6那么这意味就不能是2，这里一定要保存枚举的这个数是合法*/
+    }
+    //计算完，记录状态
+    if (!limit && !lead) dp[pos][state]=ans; /*这里对应上面的记忆化，在一定条件下时记录，保证一致性，当然如果约束条件不需要考虑lead，这里就是lead就完全不用考虑了*/
+    return ans;
+}
+
+int solve(int x) {
+    int pos = 0;
+    while (x)//把数位都分解出来
+    {
+        a[pos++] = x % 10;//个人老是喜欢编号为[0,pos),看不惯的就按自己习惯来，反正注意数位边界就行
+        x /= 10;
+    }
+    return dfs(pos - 1/*从最高位开始枚举*/,/*一系列状态 */, true, true);//刚开始最高位都是有限制并且有前导零的，显然比最高位还要高的一位视为0嘛
+}
+
+int32_t main() {
+    int le, ri;
+    while (~scanf("%intd%intd", &le, &ri)) {
+        //初始化dp数组为-1,这里还有更加优美的优化,后面讲
+        printf("%intd\n", solve(ri) - solve(le - 1));
+    }
+}
+
+另外,其实数位dp难就难在dp[][]的第二维的定义,dfs的核心就是围绕着第二维去编写的,下面给出几个思路:
+1.如果题目要求是相邻数位之间有什么要求的,第二维就设置为当前pos位之前的数,即pre
+2.如果题目要求是求某个数（字符串）对应的各个数位上的数的和（有可能是各个数的某个映射）,第二维就设置为到当前pos位的之前所有数字的和,即state为∑f[i]
+即权值和作为dp的第二维状态
+
+拆成分子分母二元组法，进行交叉相乘比较
+因为一旦涉及小数排序就基本一定会卡精度
+
+.主席树
+主席树,又称可持久化线段树
+它的作用:
+1.给n个数字,m个询问,每次求区间[l,r]内的第k大值
+2.(可持久化数组)对一个数组做两件事(i)在某个历史版本上修改某一个位置上的值,(ii)访问某个历史版本上的某一位置的值
+//实际上,第二点与主席树还有一点点区别(区别不大,几乎无区别);但主席树的最关键作用应该是第一点
+
+//函数的声明放最后可以让函数互相调用
+int subtract(int x,int top);
+int add(int x,int top);
+int32_t main() { .. }
+int subtract(int x,int top){
+    ..
+};
+int add(int x,int top){
+    ..
+};
+
+.计算三角形的面积,直角坐标系，三角形面积
+//坐标系上任三点
+1.struct node{
+    int x,y;
+}t[maxn];
+int cal(int d,int e,int f)
+{
+    return abs((t[d].x*t[e].y-t[e].x*t[d].y)+(t[e].x*t[f].y-t[f].x*t[e].y)+(t[f].x*t[d].y-t[d].x*t[f].y));
+}
+
+//有一个点是原点的三角形面积
+2.S=|x1*y2-x2*y1|
+
+D. Turtles:https://codeforces.com/problemset/problem/348/D
+题解:https://codeforces.com/blog/entry/9031
+.LGV定理:求n个起点到n个终点(且一个起点对应一个终点)的不相交路径
+int A=dp1[n][m-1],B=dp2[n-1][m],C=dp1[n-1][m],D=dp2[n][m-1];
+int jj=mod(A*B-C*D);
+if(jj<0)cout<<mum+jj; else cout<<jj;
+
+.找循环节:
+while(!vis[now])//note
+{
+    vis[now]=1;
+    ll+=to[a[now]]-now+1;
+    now=to[a[now]];
+}
+记录循环起点后
+while (!vis[now])
+{
+    vis[now]=1;
+    length+=to[a[now]]-now+1;
+    now=to[a[now]];
+}
+length就是循环节
+ll-length就是需要进入循环节前需要经过的索引数
+
+.如果你想讲输出的数序列存到一个string里一定要事先确定输出的数不会超过9
+这很重要，因为你存到string里是利用a[i]+'0'存的，而没有10这个单个字符，string加上的就会是':'
+所以这时候就只能用数组存，数组输出
+
+.now=(to[now]-1)%n+1;
+下标从1开始->对循环的索引加法
+
+943.在一个string中查找查找另外一个string，返回是否存在的bool值:
+s.find(t)!=string::npos
+注意，这里是!=而非==
+
+944.重复复制字符
+string(n,char);//重复复制n个char，注意只能是char，不能是string
+也就是说只能是单个字符的重复复制
+
+950.简单Floyd算法模板
+void floyd(){
+    for(int k=1;k<=n;k++){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                g[i][j]=min(g[i][j],g[i][k]+g[k][j]);
+            }
+        }
+    }
+}
+
+953.LIS最长上升子序列类模板函数:
+简易版：fun(i)a[i]>reorder[last]?reorder[++last]=a[i]:reorder[low(reorder+1,reorder+1+last,a[i])-reorder]=a[i];
+
+实际上对最长上升子序列取负，就是求最长下降子序列 非增非降也是如此转换
+
+函数版：
+(1)最长上升子序列模板
+int LIS_asd[maxn],weihu2[maxn];//这个在main函数外,LIS_asd是存储到第i位时当前的最长上升子序列长度(类似于前缀和),weihu2则是处理过程必须的数组
+void LIS_ascending(int *from,int *to,int len)
+{
+    int Last=0;
+    weihu2[0]=-INF;//注意这表示考虑负数,函数外面和里面都不用对to[i]数组进行置零，所有的置零只有这一行,也不用初始化a数组或者说from[0]
+    fu(i,1,len) {
+        from[i] > weihu2[Last] ? weihu2[++Last] = from[i] : weihu2[lower_bound(weihu2, weihu2 + Last + 1, from[i]) - weihu2] = from[i];
+        to[i]=Last;
+    }
+}
+/*最长非降子序列
+void LIS_ascending(int *from,int *to,int len)
+{
+    int Last=0;
+    weihu2[0]=-INF;//注意这表示考虑负数,函数外面和里面都不用对to[i]数组进行置零，所有的置零只有这一行,也不用初始化a数组或者说from[0]
+    fu(i,1,len) {
+        from[i] >= weihu2[Last] ? weihu2[++Last] = from[i] : weihu2[upper_bound(weihu2, weihu2 + Last + 1, from[i]) - weihu2] = from[i];
+        to[i]=Last;
+    }
+}
+*/
+在main函数内如此使用:
+eg:
+main{
+    fun(i)cin>>a[i];
+    LIS_ascending(a,LIS_asd,n);
+    fun(i)cout<<LIS_asd[i]<<" ";//输出到第i位时当前的最长上升子序列长度
+}
+
+(2)最长不上升子序列模板
+int LIS_nasd[maxn],weihu1[maxn];//这个在main函数外,LIS_nasd是存储到第i位时当前的最长不上升子序列长度(类似于前缀和),weihu1则是处理过程必须的数组
+void LIS_non_ascending(int *from,int *to,int len)
+{
+    function<bool(int, int)> cmp = [&](int a,int b) { return a>=b; };
+    int last=0;
+    weihu1[last]=INF;//函数外面和里面都不用对to[i]数组进行置零，所有的置零只有这一行,也不用初始化a数组或者说from[0]
+    fu(i,1,len) {
+        from[i]<=weihu1[last]?weihu1[++last]=from[i]:weihu1[lower_bound(weihu1,weihu1+last+1,from[i],cmp)-weihu1]=from[i];
+        to[i]=last;
+    }
+}
+/*最长下降子序列模板
+void LIS_non_ascending(int *from,int *to,int len)
+{
+    function<bool(int, int)> cmp = [&](int a,int b) { return a>=b; };
+    int last=0;
+    weihu1[last]=INF;//函数外面和里面都不用对to[i]数组进行置零，所有的置零只有这一行,也不用初始化a数组或者说from[0]
+    fu(i,1,len) {
+        from[i]<weihu1[last]?weihu1[++last]=from[i]:weihu1[upper_bound(weihu1,weihu1+last+1,from[i],cmp)-weihu1]=from[i];
+        to[i]=last;
+    }
+}
+*/
+在main函数内如此使用:
+eg:
+main{
+    fun(i)cin>>a[i];
+    LIS_non_ascending(a,LIS_nasd,n);
+    fun(i)cout<<LIS_nasd[i]<<" ";//输出到第i位时当前的最长不上升子序列长度
+}
+
+955.对于distance的改进
+由于distance的效率太低，所以每每要使用这个函数的时候有更好的方法——map
+一般来讲，要用distance，都是在set容器内看这个数在这个容器中的次序
+这时候完全可以建立一个umap<int,int>t
+遍历distance所在容器，不妨令其为set<int>T;
+则
+int cnt=0;
+fa(i,T)t[i]=++cnt;//这样就能遍历一次就确定每个数的次序！
+然后在下次用到的时候直接访问t[val]就行
+避免了distance的重复遍历计算距离
+
+974.跟二进制位置有关的宏定义，高技巧（或许可以用bitset？）待研究
+__builtin_popcount(x):返回n的二进制位中的1的个数,可以用来判断一个数是不是2的幂，此函数在状压dp中特别有用。
+
+__builtin_parity(x):判断n二进制位中1的个数是否为奇数，奇数返回1，偶数返回0。
+
+__builtin_ffs(x):返回n的二进制位中从后往前数第一个1的位置（从1开始计数）,同时也是从后往前数0的个数加1。
+eg:x=0 => 0; x=1 => 1; x=2 => 2; x=3 => 1; x=4 => 3; x=5 => 1
+
+__builtin_ctz(n):返回n从最低位开始连续0的个数等价于lowbit
+
+__builtin_clz(x):返回x前导零的个数(32位)
+eg:x=0 => 31; x=1 => 31; x=2 => 30; x=4 => 29; x=128 => 24
+__builtin_clzll(x):返回x前导零的个数(64位)
+eg:x=0 => 63; x=1 => 63; x=2 => 62; x=4 => 61; x=128 => 56; x=1152921504606846976 => 3
+
+//返回x在二进制下的长度<=>求出x的最高位的所在位置
+#define MSB(x) ((x==0)?0:(64-__builtin_clzll((x))))
+eg:x=0 => 0; x=1 => 1; x=2 => 2; x=4 => 3; x=128 => 8; x=1152921504606846976 => 61
+
+初始化结构体内数组
+struct object{
+    int a;
+    int b[10];
+    //以object(){..}即完成构造函数
+    object(){
+        a = INF;
+        fu(i,1,9) b[i] = INF;//这句话就使得每次结构体声明时都完成了数组的初始化，而不需要在main函数内大费周章
+    }
+};
+
+对一个已经修改过的结构体，重新快速初始化（无法代替！）
+在之前已经有 node t;的基础上
+再使用t=node();就可以完成初始化
+
+981.结构体重载与加号‘+’
+将结构体应用重载加号能实现非常强大的功能:
+struct node{
+    int x,y,z;
+    node operator+(node &t)const{//这样就使得两个node类型的对象可以应用加号
+        return {t.x+x,t.y+y,t.z+z};
+        //node an=*this;return {t.x+an.x,t.y+an.y,t.z+an.z};//这句话与上面那句的效果相同，仅展示下*this的作用
+    }
+};
+eg:
+node q={1,2,3},w={4,5,6};
+node e=q+w;//结构体重载'+'号使得这句话得以成立
+out(e.x) out(e.y) out(e.z)输出5 7 9
+
+983.结构体重载与索引号[]
+这也很重要，在遇到结构体内有数组时，使用这个能极大的方便访问
+:
+struct object{
+    int x,y[9];
+    object(){ x=INF; fu(i,1,8)y[i]=i; }//结合上一条笔记，这个就是构造函数
+    int& operator[](int x)const{return y[x];}//这句话完成[]重载，使得以后访问object的y数组值需要直接在对象后加[x]就行了
+    //切记要在第一个int后面加上&,如果不加上则不能对这个结构体内的数组进行修改，而只能访问
+    //而如果是二维数组的话要把&改成*
+};
+eg:
+main():  node t;out(t.x);out(t[1]);out(t[2]);out(t[3]);//输出1e9 1 2 3！
+
+比较两个字符串的字典序最标准的方法就是用<和>号！（即使两个字串长度不同也适用）
+所以以前的观点是错的，但是一定要注意一个点！
+就是如果要比较两个字符串，一定要用string结构先去存储，不能直接用引号来比较
+eg:
+string q="ab",w="aa";
+out(q<w);//返回0;
+但是如果是out("ab"<"aa")就是返回1
+所以，用set装string就是按字典序排序的
+
+996.算术运算符的高级运用（状压dp、位运算的总结）
+右数第i位赋为1:x+=(1<<(i-1))
+去掉最后一位 : x >> 1
+在最后加一个0 : x << 1
+在最后加一个1 (x<< 1)+1
+把最后一位变成1 x | 1 （|定值为1）
+把最后一位变成0 : (x | 1) - 1
+最后一位取反 x ^ 1
+把右数第k位变成1 x | (1 << (k-1))
+把右数第k位变成0 x & (~ (1 << (k-1)))
+右数第k位取反 : x ^ (1 << (k-1))
+取末k位 x & ((1<<k)-1)
+取右数第k位 (x >> (k-1)) & 1
+把末k位变成1 x | ((1 << k)-1) 末k位取反 ： x ^ ((1 << k)-1)
+把右边连续的1变成0 (x & (x+1))
+把右起第一个0变成1 x | (x+1)
+把右边连续的0变成1 x | (x-1) 取右边连续的1 ： (x ^ (x+1)) >> 1
+
+1001.copy_n用于复制STL容器
+t.pb(1);t.pb(3);t.pb(2);t.pb(5);t.pb(4);
+copy_n(t.begin(),3,T.begin());//该行为使用方法！
+fa(i,T)out(i)//1 3 2 0 0
+注意！如果赋值给的容器是vct的话要事先给予这个容器大小，否则装不进去:vct T(5);!!!
+copy只负责复制，不负责申请空间，所以复制前必须有足够的空间
+
+1002.很强大的一个字符串:to_string
+将数值转换成对应的字符串
+cout<<to_string(32)+to_string(55);
+输出3255！
+
+1012.学到一招:遍历素因数、遍历质因数、找出质因数、找出素因数、找出所有素因数、找出所有素因数
+对x质因数分解，找出所有质因数(去重)：
+for(int i=2;i*i<=x;i++)
+{
+    if(x%i==0)
+    {
+        while(x%i==0)x/=i;
+        did(i);
+    }
+}
+if(x!=1)did(x);//这样就能做到不重不漏了
+
+.集合从大到小排序:set<int,greater<int>>t;
+
+.函数内引用STL容器
+void Push(vc<node>&t,int valx,int valy){...}
+
+
+用sort函数完成对未定义排序规则的结构体的排序：
+struct S{int a,b;}s[179000];
+sort(s,s+n,[](S a,S b){return a.a<b.a;});
+重点:[](S a,S b){return a.a<b.a;}
+
+.如果分析出：
+vy2-vy1=a(vx2-vx1)
+就要把1和2变量分开=>重设&发现
+a*vx2-vy2=a*vx1-vy1
+
+
+1044.内存空间与MLE
+256megabytes大概是10^8的数据
+int类型占4个字节
+megabytes=MB
+Kilobyte=KB
+byte=B=字节
+bit=b
+1MB=1024KB
+1KB=1024B
+1B=8b
+1个int=4B
+1个char=1B
+1个long long(int)=8B
+所以256megabytes=67108864个int单位=268435456个char=33554432个long long 单位
+所以可以申请最多3e7的数据量，如果大了就会MLE
+
+.同一结构体定义不同排序规则分别装入不同STL容器中:
+struct node{
+    int x,y;
+};
+struct cmp1{
+    bool operator()(node A, node B){
+        return A.x<B.x;
+    }
+};
+struct cmp2{
+    bool operator()(node A,node B)
+    {
+        return A.y<B.y;
+    }
+};
+//set:
+set<node,cmp1>have;set<node,cmp2>h;
+//priority_queue
+pq<node,vc<node>,cmp1>g;
+
+1067.vct 去重
+sort(V.begin(),V.end());
+V.erase(unique(V.begin(),V.end()),V.end());
+
+
+1070.对于二维平面的题
+如果对行和对列的操作是类似或者是相同的
+就考虑讲对列的操作翻转过来，即跟行相同！
+这样就不用专门去把对行的操作和对列的操作分开了！
+例如做前缀和时:
+fun(i)fun(j){
+numr[i][j]=numr[i][j-1]+(k[i][j]=='B');//注意只是最后的k[i][j]=='B'有所不同！
+numc[i][j]=numc[i][j-1]+(k[j][i]=='B');//注意只是最后的k[j][i]=='B'有所不同！
+}
+要注意最好使用的时候还要反回来！
+
+1071.函数传二维数组 函数内引用二维数组 函数内引用数组 函数引用数组 函数内传二维数组 函数内传数组
+int r[5][5];
+int nn(int i,int j,int (*x)[5])//这一行也可以换成int nn(int i,int j,int x[][5])
+{
+    return x[i][j];
+}
+注意上面两种都是引用传参，所以在函数内部对这个二维数组进行修改也是能反馈到原数组的！
+
+1078.
+下标从1开始的循环，循环节长度为n
+return (x+pos-1)%n+1;
+
+1079.multiset实现从大到小排序
+ms<int,greater<int>>have;
+
+1080.欧拉函数
+1~N中与N互质的数的个数，记做phi(N)
+求单个数的欧拉函数
+int phi(int n) {
+    int ans = n;
+    for (int i = 2; i <= sqrt(n); ++i) if (n % i == 0) {
+            ans = ans / i * (i-1);
+            while (n % i == 0) n /= i;
+        }
+    if (n > 1) ans = ans / n * (n-1);
+    return ans;
+}
+
+用线性筛法以 O(NlogN) 复杂度求出 [2,N] 中每个数的欧拉函数。
+void euler(int n) {
+    for (int i = 2; i <= n; ++i) phi[i] = i;
+    for (int i = 2; i <= n; ++i) if (phi[i] == i)
+        for (int j = i; j <= n; j += i)
+            phi[j] = phi[j] / i * (i-1);
+}
+
+
+
+1086.判断两个区间有没有交集：
+区间1：a[1]——a[2]
+区间2：a[3]——a[4]
+int mx=-INF,mi=INF;
+mx=min(a[2],a[4]);
+mi=max(a[1],a[4]);
+//顺便完成了将区间进一步取交集=>交集区间[mi,mx];
+out(mi>mx?"无交集":"有交集")
+
+
+
+1097.树状数组模板
+注意:起始存点必须>=1
+也就是说不能出现update(0,x,up),因为如果pos是0的话i+=lowbit(i)会无限进行下去
+如果出现要对pos=0操作的情况，就在程序编完后所有用到树状数组函数的传入量+1(推荐这种) 或者 特判0的情况
+
+//n为数组最大值,pos为更新的位置,val为更新后的数
+int tree_f[maxn];//pos:下标;val:更新的值;up:数组容量上限,一般是n,getsum(n+1)是错误的;
+void update(int pos,int val,int up){ for(int i=pos;i<=up;i+=i&-i) tree_f[i] += val; }
+
+//求和A1~Apos
+int getsum(int pos){ int num = 0;for(int i=pos;i;i-=i&-i)num += tree_f[i];return num; }
+
+.文件读入输出
+freopen("input.txt","r",stdin);
+freopen("output.txt","w",stdout);
+
+1106.莫队算法模板、莫队模板
+涉及到区间内的遍历离线问题都可以用莫队
+注意:条件是离线，如果中间穿插修改的或者什么利用mod等的在线问题，都不能用莫队,小心。
+
+（可以跑1e5的数据的，即使在树上，即使是codeforces！因为n*sqrt(n)只是最极端的情况）
+切记！l、r的初始值要这么设：int l=have[1].l,r=have[1].l-1;
+
+//常规模板：
+//右指针右移、左指针左移
+void add(int pos) {//一定要小心这两个函数的区别，不要看很像，其实内部的次序是不同的，add是先计数后加，del是先减后计数
+    if(!cnt[a[pos]]) ++now;//这里不能用^1因为cnt[a[pos]]的值不仅有0和1
+    ++cnt[a[pos]];
+}
+
+//右指针左移、左指针右移
+void del(int pos) {//一定要小心这两个函数的区别，不要看很像，其实内部的次序是不同的，add是先计数后加，del是先减后计数
+    --cnt[a[pos]];
+    if(!cnt[a[pos]]) --now;
+}
+//main函数内部的设置
+while(l < have[i].l) del(l++);
+while(l > have[i].l) add(--l);
+while(r < have[i].r) add(++r);
+while(r > have[i].r) del(r--);
+
+//高级模板：//仅适用于一般计种数，如果是其它区间情况，则回归常规模板
+while(l < have[i].l) now -= !--cnt[a[l++]];
+while(l > have[i].l) now += !cnt[a[--l]]++;
+while(r < have[i].r) now += !cnt[a[++r]]++;
+while(r > have[i].r) now -= !--cnt[a[r--]];
+
+//查询区间的排序函数
+int cmp(query a, query b) {
+    return belong[a.l] == belong[b.l] ? a.r < b.r : belong[a.l] < belong[b.l];
+}
+//换成如下方法，能再加快！
+int cmp(query a, query b) {//小常数上的优化，即对于右指针，进行不同块衔接时的快速移动
+    return (belong[a.l] ^ belong[b.l]) ? belong[a.l] < belong[b.l] : ((belong[a.l] & 1) ? a.r < b.r : a.r > b.r);
+}
+
+！！！标程：
+const int maxn=1e6+5;
+const int mum=1e9+7;
+int n,m,a[maxn],b[maxn],ans;
+int belong[maxn],l=1,r,now,f[maxn],cnt[maxn],len;
+struct node{
+    int id,l,r;
+}have[maxn];
+int cmp(node a,node b)
+{
+    return (a.l/len ^ b.l/len) ? a.l/len < b.l/len : ((a.l/len & 1) ? a.r < b.r : a.r > b.r);
+}
+//右指针右移、左指针左移
+void add(int pos) {
+    if(!cnt[a[pos]]) ++now;
+    ++cnt[a[pos]];
+}
+
+//右指针左移、左指针右移
+void del(int pos) {
+    --cnt[a[pos]];
+    if(!cnt[a[pos]]) --now;
+}
+main()
+{
+    IOS
+    cin>>n;
+//    int len=ceil(sqrt(n)); int block=len;
+//    for(int i=1;i<=n;i++) belong[i]=(i-1)/block+1;
+    len=sqrt(n);
+    fun(i)cin>>a[i];
+    cin>>m;
+    fum(i){
+        cin>>have[i].l>>have[i].r;
+        have[i].id=i;
+    }
+    sort(have+1,have+m+1,cmp);
+    fum(i)
+    {
+        while(l < have[i].l) del(l++);
+        while(l > have[i].l) add(--l);
+        while(r < have[i].r) add(++r);
+        while(r > have[i].r) del(r--);
+
+        f[have[i].id]=now;
+    }
+    fum(i)out(f[i])
+    return 0;
+}
+
+1108.下标从1开始的数组进行lower_bound找到val的下标
+int pos=lower_bound(a+1,a+n+1,val)-a;//!!
+则pos就是目标下标,同时要注意一个点，如此求low，则无论进行二分的最小是什么，pos的最小可能值是1，不会出现pos=0的情况,（这也正好符合了下标从1开始的要求）
+
+1109.离散化模板
+注意！事先要读入n：cin>>n; 以及要事先声明Data数组：int Data[maxn];//不能是data,命名冲突
+离散化主流分两种，一种是并列算一个元素;另一种是并列算不同元素;还有第三种是相同元素，pos靠后的大
+第一种:
+并列算不同元素：（无须使用unique函数）
+fun(i)cin>>a[i],Data[i]=a[i];
+sort(in(Data));fun(i)a[i]=low(in(Data),a[i])-Data;  //离散化
+eg:
+input:
+5
+1 3 3 5 10
+output:
+1 2 2 4 5
+
+第二种:
+并列算同一元素：（需要使用unique函数）
+fun(i)cin>>a[i],Data[i]=a[i];sort(in(Data));int kinds=unique(Data+1,Data+1+n)-(Data+1);
+fun(i)a[i]=low(Data+1,Data+kinds+1,a[i])-Data;
+eg:
+input:
+5
+1 3 3 5 10
+output:
+1 2 2 3 4
+
+第三种:
+相同元素，靠后的大
+//SET have;
+//umap<int,vct>h;
+fun(i)cin>>a[i],have.insert(a[i]),h[a[i]].pb(i);
+int cnt=0;
+fa(i,have)
+{
+    fa(j,h[i])
+    {
+        a[j]=++cnt;
+        pos[a[j]]=j;
+    }
+}
+eg:
+input:
+5
+1 3 3 5 10
+output:
+1 2 3 4 5
+
+1110.利用dfs序（欧拉序）将树化为区间（以便进行序列操作如线段树、树状数组、莫队） 模板
+void dfs(int rt)
+{
+    Start[rt]=++Time;
+    arr[Time]=col[rt];
+    vis[rt]=1;
+    fa(i,v[rt])if(!vis[i])dfs(i);
+    End[rt]=Time;
+}
+
+
+1113.tuple 与 map
+如果想在函数内引用map，则map内装的必须是自然结构，即结构体是不行的，即使给结构体重载了排序
+map<tuple<int,int,int>,umap<int,int>>h;//这个可以在函数引用传参
+map<node,umap<int,int>>h;//这个不行会报错
+另外mk(val,val,val)返回就是一个tuple类型的元素//#define mk(i,j,k) make_tuple(i,j,k)
+但是不能通过{val,val,val}来让程序识别这是一个tuple元素，即使前面加(tuple<int,int,int>)也不行,这是和pair<int,int>有区别的地方
+通过#define got(container,num) get<num-1>(container) 访问
+
+
+
+
+
+排列组合公式
+.圆排列公式:(n-1)! ;从n个元素中取出m个元素的圆排列数＝A(m,n)/n
+.n个元素被分成k类，每类的个数分别是 n1,n2,...nk 这n个元素的全排列数为n!/(n1!*n2!*...*nk!)
+.k类元素,每类的个数无限,从中取出m个元素的组合数为C(m,m+k-1)
+.定序问题倍缩空位插入策略
+eg: 7人排队,其中 甲乙丙3人 顺序一定共有多少不同的排法?
+解:
+( 倍缩法 )对于某几个元素顺序一定的排列问题,可先把这几个元素与其他元素一起进行排列,然后用总排列数除以这个元素之间的全排列数,则共有不同排法种数是：A(7,7)/A(3,3)
+(空位法 )设想有7把椅子让除甲乙丙以外的四人就坐共有A(4,7)法，其余的三个位置甲乙丙共有1种坐法，则共有A(4,7)
+.平均分组问题
+6本不同的书平均分成3堆, 每堆2本共有多少分法
+C(2,6)*C(2,4)*C(2,2)/A(3,3)
+平均分组先组合选，再要除以组数的阶乘
+
+.二进制下指定位数补集
+int comp=~mask&((1<<num)-1); 或者 bone(20)^mask
+
+1145.线性基模板
+void add(int rt,int val)
+{
+    fd(i,31,0)
+    {
+        if(!(val>>i))continue;
+        if(!st[rt][i])
+        {
+            st[rt][i]=val;
+            break;
+        }else{
+            val^=st[rt][i];//注意这里不是val^=(1<<i)!
+        }
+    }
+}
+
+
+1155.单调队列模板
+vct vct_of_min(int* f,int len,int k)
+{
+    int head=1,tail=0;
+    vct gget;
+    fu(i,1,len)
+    {
+        while(tail>=head && Queue[tail]>=f[i])tail--;
+        Queue[++tail]=f[i];
+        pos[tail]=i;
+        while(pos[head]<=i-k)head++;
+        if(i>=k)gget.pb(Queue[head]);
+    }
+    return gget;
+}
+vct vct_of_max(int* f,int len,int k)
+{
+    int head=1,tail=0;
+    vct gget;
+    fu(i,1,len)
+    {
+        while(tail>=head && Queue[tail]<=f[i])tail--;
+        Queue[++tail]=f[i];
+        pos[tail]=i;
+        while(pos[head]<=i-k)head++;
+        if(i>=k)gget.pb(Queue[head]);
+    }
+    return gget;
+}
+main()
+{
+    IOS
+    cin>>n>>m;
+    fun(i)cin>>a[i];
+    fa(i,vct_of_min(a,n,m))cout<<i<<" ";cout<<endl;
+    fa(i,vct_of_max(a,n,m))cout<<i<<" ";
+    return 0;
+}
+
+1160.1e6 快读有的时候会比C还快很多很多
+快读模板
+template <class T> void read(T &x) {
+    int f = 0; x = 0; char ch = getchar();
+    for (; !isdigit(ch); ch = getchar()) f |= (ch == '-');
+    for (; isdigit(ch); ch = getchar()) x = x * 10 + ch - '0';
+    if (f) x = -x;
+}
+快输
+
+1168.矩阵快速幂模板
+
+const int N=105;//矩阵的边长大小,实际需要自己调整
+struct Matrix {
+    int c[N][N];
+
+    //如果使用下面这行,则在声明变量Matrix变量的时候会自动初始化为INF，但是如果使用了Matrix A(3);等则意为初始化矩阵所有元素为3！
+    //Matrix(int x = INF) { memset(c, 0x3f, sizeof(c)); for (int i = 0; i < N; i++) c[i][i] = x; }
+
+    int*operator [](int x) { return c[x]; }//重载后可直接用A[i][j],而非A.c[i][j]
+    const int*operator [](int x) const { return c[x]; }
+} A;
+Matrix operator*(const Matrix &x,const Matrix &y) {//注意，这里默认矩阵的边长是n!
+    Matrix a;
+    fun(i)
+        fun(j) {
+            a[i][j]=0;
+            fun(k) {
+                //a[i][j]=mod(a[i][j]+x[i][k]*y[k][j]);
+                a[i][j]+=x[i][k]*y[k][j] ;
+            }
+        }
+    return a;
+}
+
+最好的方法:
+for(;len;len>>=1,I=I*I) if(len&1)A=A*I;//快速幂的高级表达方式！
+for(;len;len>>=1,base=base*base) if(len&1)A=A*base;//快速幂的高级表达方式！
+
+其它方法:
+Matrix POW(Matrix A,int k)
+{
+    Matrix I;
+    fun(i)I[i][i]=1;
+    while(k>0) {
+        if(k%2==1) I=I*A;
+        A=A*A;
+        k=k>>1;
+    }
+    return I;
+}
+
+.斜率dp的应用
+优化形如dp[i]=a[j]*b[i]+c[j]+d[i]+e的dp方程
+如果是dp[i]=a[j]+b[i]+c[j]+d[i]+e的dp方程
+则是用单调队列
+
+.用线段树可以维护区间最大连续字段和
+只需要记录每个结点的4个值：sum[](区间总和)、val[](区间最大连续字段和)、maxl[](左儿子最大后缀和)、maxr[](右儿子最大前缀和)
+
+.差分约束中的等号关系转换为两条消息：<=和>=
+a=kb;//用差分约束只需要取log即可
+视为给出两个条件(1)a<=kb;(2)a>=kb
+
+1189.二进制高维前缀和、多维前缀和
+for(int i=0;i<w;i++){
+    for(int j=0;j<(1<<w);j++){
+        if(j&(1<<i)) f[j]+=f[j^(1<<i)];
+    }
+}
+
+1190.kmp自动机模板
+KMP自动机与KMP的区别在于KMP自动机额外求出了 trans（i,j） 表示在第i位置上往后匹配一个j字符会转移到什么状态（状态在这里指已经成功匹配了多少个字符）。
+在代码中，将用fail来代替KMP的next，nxt代替上面的trans。
+for(int i = 1, fail = 0; i <= n; i ++) {
+	fail = nxt[fail][s[i]]; // 注意这一行不能和下一行互换
+	nxt[i - 1][s[i]] = i;
+	for(int j = 0; j < m; j ++)
+		nxt[i][j] = nxt[fail][j];
+}
+
+1204. 使用sort函数对int数组从大到小排序不用再定义函数辣,用这个代码:
+sort(in(a),greater<int>());
+
+STL容器也可以:
+vct h(n);
+far(i,h)cin>>i;
+sort(all(h),greater<int>());
+
+.括号串排序题:
+巧用set的自定义排序功能
+用return a.val+b.Min<a.val+b.Min;的方式定义如何对val为负的括号串的排序，这样就能保证两个相邻串前后顺序的合理性
+这个技巧的技巧性很高，要多复习，目前遇到括号串匹配排序的时候可以充分记忆！
+bool operator<(const node1&a,const node1&b)
+{
+    return a.val+b.Min>b.val+a.Min;
+}
+遇到安排顺序的题都可以用考虑相邻两个对象的相对位置的排序来处理
+
+1210.now下标从1开始模n的进i位
+(n+now+i-1)%n+1
+
+1211.vct数组声明空间的快捷方式
+声明vct数组的一维空间:
+vct h(n);
+声明vct数组的二维空间:二维vct
+vc<vct> h(H.size(),vct(W.size(),0));//同时初始化值为0
+如果要同时给两个容器声明相同的二维空间可以如下操作:
+vc<vct>L,U;
+L=U=vc<vct>(H.size(),vct(W.size(),0));
+
+1212.vct 中的low
+n=10;
+vct h(n);
+fun(i)h[i-1]=i;
+int index=low(all(h),3)-h.begin();
+out(index)
+输出2
+h中元素为:1、2、3、4、5、6、7、8、9、10
+
+1213.直接vct声明内部元素:
+vct q{-INF,INF,0};
+
+由于是无向图，存边的时候是两个方向都存，而如果当我们缩成一个点的时候就可以考虑在这双向上做文章
+即让u-v边权为x，v-u边权为0
+add(0,i,0),add(i,0,x);
+这样就实现经过超级源点时，内部路程只计算了一次x
+非常实用且经典的技巧
+
+1238.
+https://atcoder.jp/contests/abc143/tasks/abc143_e?lang=en
+超级经典的Floyd算法变形
+这题出得太好了
+什么时候用Floyd呢，就是在点数为n<=300的时候用
+Floyd要注意的是首先固定K再f[i][j]=min(f[i][j],f[i][k]+f[k][j]);
+这题实在是太秒啦，一定要多看！多去感悟这种Floyd的变形！！
+
+另外用Floyd可以处理所有两个点的最短路径
+
+在本题中,先一次floyd处理出g[i][j]表示为点i到点j的最短路径
+再遍历一次ij，将g[i][j]转换为1或INF，表示能否让i到j一次完成
+同时将g[i][j]赋值给f[i][j]
+用于第二次floyd
+第二次就可以直接导出f[i][j]也就是i到j的最小加油次数
+
+
+1239.vc内装tuple，可以直接排序，不用重载，其有自己的排序规则
+vc<tuple<int,int,int>>have;
+就是按第一元素从小到大排，相等看第二个，依次往后看
+
+
+
+
+.折半搜索
+如果n=25
+考虑搜索
+(i)搜索时不要像傻子一样fun,直接dfs(now+1..)
+(ii)n=25,如果是3^25，或2^25，可能会TLE，则考虑折半搜索
+(iii)折半搜索只能折一次，因为是第一次记录所有的情况，第二次直接ans+=val[num][k];
+dfs(1,n/2+1,0,0):
+if(now==have) {
+    val[num][have2]++;
+    return;
+}
+DFS(n/2+1,n+1,0,0):
+if(now==have+1):
+{
+    fu(i,0,m-have2)ans+=val[t-num][i];
+    return;
+}
+
+注意两次搜索的区别与联系
+dfs(1,n/2+1,0,0);
+DFS(n/2+1,n+1,0,0);
+
+还有,注意在做第二次的DFS的时候如果复制粘贴了第一次的dfs要把其中的dfs改成DFS
+别忘了
+
+
+
+.返回vct h里有多少val:
+int num=count(all(h), val);
+
+
+1268.二进制的技巧
+if(!(x&(x+1)))out(x);//当且仅当x=2^k-1时,会输出x
+也就是说通过判断!(x&(x+1)),来确定x是否是2^k-1;eg:1、3、7、15……
+
+1270.STL从某一个位置开始遍历到最后：
+set<int>::iterator it = a.low(x);
+while(it != a.end()){
+    cout<<*it<< " ";
+    it++;
+}
+
+1271.for(int i=1;;i=2*i+1)就是让i遍历所有的2^x-1
+1、3、7、15、31、63……
+注意是2*i-1
+
+
+1274.如果是脑筋急转弯题的话，确实要思考巧法
+但是如果是E题及以上的话就要先去思考严格正确的暴力方法再去思考如果用数据结构优化暴力算法
+因为有些题是必定要用到数据结构体如线段树等的，而如果你一味地去思考巧法，反而会一筹莫展
+所以这时候思考严密的暴力后再想能否通过线段树等算法优化才是合理的
+否则你想得越久，浪费得时间越多
+
+1275.结构体重载:
+//下面这种方式:不仅可以访问元素，还可以修改元素
+bool operator<(node&a){//用这样的重载方式吧,可以少打两个const
+    return x>a.x;
+}
+
+//下面这种方式:只能访问而不能修改元素
+bool operator<(const node&a)const{
+    return x>a.x;
+}
+
+内部的声明函数必须要加花括号！
+node() { mst(x, 0); }//否则就会报错
+
+结构体重载[]:
+const int N=105;//矩阵的边长大小,实际需要自己调整
+struct node{
+    int x[N];
+    node() { mst(x, 0); }
+    int & operator[](int t){return x[t];}
+};
+
+关键句:    int & operator[](int t){return x[t];}
+
+如果是结构体内是二维数组:
+int c[N][N];
+int*operator [](int x) { return c[x]; }//重载后可直接用A[i][j],而非A.c[i][j]
+就是把*改成&
+
+注:
+C++ 规定，下标运算符[ ]必须以成员函数的形式进行重载。该重载函数在类中的声明格式如下：
+返回值类型 & operator[ ] (参数);
+或者：
+const 返回值类型 & operator[ ] (参数) const;
+
+使用第一种声明方式，[ ]不仅可以访问元素，还可以修改元素。使用第二种声明方式，[ ]只能访问而不能修改元素。
+在实际开发中，我们应该同时提供以上两种形式，这样做是为了适应 const 对象.
+因为通过 const 对象只能调用 const 成员函数，如果不提供第二种形式，那么将无法访问 const 对象的任何元素。
+
+
+1281.O2\O3优化:
+#pragma GCC optimize(2)
+#pragma GCC optimize(3)
+#pragma GCC optimize("Ofast")
+#pragma GCC optimize("inline")
+#pragma GCC optimize("-fgcse")
+#pragma GCC optimize("-fgcse-lm")
+#pragma GCC optimize("-fipa-sra")
+#pragma GCC optimize("-ftree-pre")
+#pragma GCC optimize("-ftree-vrp")
+#pragma GCC optimize("-fpeephole2")
+#pragma GCC optimize("-ffast-math")
+#pragma GCC optimize("-fsched-spec")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC optimize("-falign-jumps")
+#pragma GCC optimize("-falign-loops")
+#pragma GCC optimize("-falign-labels")
+#pragma GCC optimize("-fdevirtualize")
+#pragma GCC optimize("-fcaller-saves")
+#pragma GCC optimize("-fcrossjumping")
+#pragma GCC optimize("-fthread-jumps")
+#pragma GCC optimize("-funroll-loops")
+#pragma GCC optimize("-freorder-blocks")
+#pragma GCC optimize("-fschedule-insns")
+#pragma GCC optimize("inline-functions")
+#pragma GCC optimize("-ftree-tail-merge")
+#pragma GCC optimize("-fschedule-insns2")
+#pragma GCC optimize("-fstrict-aliasing")
+#pragma GCC optimize("-falign-functions")
+#pragma GCC optimize("-fcse-follow-jumps")
+#pragma GCC optimize("-fsched-interblock")
+#pragma GCC optimize("-fpartial-inlining")
+#pragma GCC optimize("no-stack-protector")
+#pragma GCC optimize("-freorder-functions")
+#pragma GCC optimize("-findirect-inlining")
+#pragma GCC optimize("-fhoist-adjacent-loads")
+#pragma GCC optimize("-frerun-cse-after-loop")
+#pragma GCC optimize("inline-small-functions")
+#pragma GCC optimize("-finline-small-functions")
+#pragma GCC optimize("-ftree-switch-conversion")
+#pragma GCC optimize("-foptimize-sibling-calls")
+#pragma GCC optimize("-fexpensive-optimizations")
+#pragma GCC optimize("inline-functions-called-once")
+#pragma GCC optimize("-fdelete-null-pointer-checks")
+O3会更好,但实际上没什么作用，也从来没遇到过一题是用了会过，不会会T的（别管洛谷）
+
+
+1283.
+威佐夫博弈:有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，规定每次至少取一个，多者不限，最后取光者得胜。
+121个数（含1）
+1.618033988749894848204586834365638117720309179805762862135448622705260462818902449707207204189391137484754088075386891752
+while(scanf("%d%d",&a,&b)!=EOF){
+     k = abs(a-b);
+     a = a < b? a : b;
+     a_k = floor(k*(1.0 + sqrt(5.0))/2);
+     printf("%d\n",a!=a_k);
+     //输出为0，说明该点为必败点，1为必胜点
+}
+
+.匈牙利算法的广泛应用:
+最大匹配算法的广泛应用:
+(i)在二分图中最小顶点覆盖等于二分图的最大匹配。
+(ii)最大独立集 = 所有顶点数 - 最小顶点覆盖 = 所有顶点数 -   最大匹配
+所以求 二分图最大匹配 <=> 最大独立集 <=> 最小顶点覆盖
+仅适用于二分图
+注:最小顶点覆盖就是选择最少的点来覆盖所有的边
+
+
+1295.umap<int,ll>e[N];
+这行很可能会导致MLE
+所以用ms<P>have;然后用have.count({x,vv[i]})的方法能完美地替代map找点对对应的值
+
+1296.如果比赛的时候一直wa不如换一种求法
+
+1297.转换进制的方法
+while(val)
+{
+    Ans+=val%x;//题目要求val转换成x进制后求各数位上的和
+    val/=x;
+}
+
+
+
+
+
+
+
+
+.memset的替代:
+fill(all(h),val)
+fill(in(a),val);//能指定数值
+
+
+
+
+.字符串hash用的模数
+const int P = 1610612741;//<long long
+或者用ull 做自然模数
+也可以使用int自然溢出
+
+另外要注意：
+（i）比赛时能不用自然溢出就不要（平时刷题如果用自然溢出被卡可以及时换掉，但是比赛时如果用自然溢出，OI赛制就GG了）
+（ii）并且进制数不要选太简单的，比如 233 和 13131 这样的，尽量大一点，比如 233333 .太小容易被卡。
+（iii）模数用大质数
+
+
+
+1327.万能头不能用的时候要用的头文件,POJ
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+#include <vector>
+#include <map>
+#include <queue>
+#include <algorithm>
+#include <math.h>
+#include <cstdio>
+
+
+
+
+
+. 类似蛇形走的一个遍历方式:不是严格的蛇形走，但能做到回环，一环一环相连
+eg:
+5
+25 24 17 16 1
+22 23 18 15 2
+21 20 19 14 3
+10 11 12 13 4
+9  8  7  6  5
+fd(i,n,4)//
+{
+    if(i%2==0)
+    {
+        fu(j,1,i)f[i][j]=++cnt;
+        fd(j,i-1,1)f[j][i]=++cnt;
+    }else{
+        fu(j,1,i)f[j][i]=++cnt;
+        fd(j,i-1,1)f[i][j]=++cnt;
+    }
+}
+//把fd改成fu就是1在左上角的蛇形走了！
+
+1337.找出n以内所有数的最大因数,O(n*logn)
+fu(i,1,n)
+{
+    if(!a[i])a[i]=1;
+    for(int j=i*2;j<=n;j+=i) a[j]=i;//类似埃氏筛，但是要注意j=i*2,而埃氏筛中是j=i*i,因为标准的埃氏筛是晒出所有质数
+}
+
+
+.时间
+打印耗时:
+TIME__START = clock();
+printf("%d\n",TIME__START);
+solve()
+TIME__END = clock();
+printf("%d\n",TIME__END);
+//注意，单位是ms，所以/1000才是s
+
+
+.实现数组的随机排序、随机排序函数
+n=9;
+fun(i)a[i]=i;
+random_shuffle(in(a));
+fun(i)cout<<a[i]<<" ";
+在对拍的生成程序上有很大的用武之地
+
+
+
+
+
+
+
+
+
+1352.tarjan缩点的同时可以顺便完成拓扑排序！
+只要如此给sd[i]赋值即可:
+if(dfn[now]==Low[now]){
+    int y;
+    TIME++;//每次遇到这句话从这里开始加
+    while(y=Stack[--Time]){
+        sd[y]=TIME;//注意这句话是关键，也就是说使用另外一个变量TIME，注意不是Time!
+        vis[y]=0;
+        if(y==now)break;
+    }
+}
+
+不要千万还要切记如此拓扑排序后的顺序为拓扑逆序！
+不过也就只能完成标序号，不能完成拓扑排序的dp过程：
+即只有拓扑序，但是拓扑排序的过程中一般是要进行DP的
+
+
+1361.求树的直径
+（1）方法：先从任意一点P出发，找离它最远的点Q，再从点Q出发，找离它最远的点W，W到Q的距离就是是的直径
+（2）对于每个节点我们要记录两个值：f1[i]表示以i为根的子树中，i到叶子结点距离的最大值f2[i]表示以i为根的子树中，i到叶子结点距离的次大值对于一个节点，它到叶子结点距
+离的最大值和次大致所经过的路径肯定是不一样的若j是i的儿子，那么（下面的w[i][j]表示i到j的路径长度）：
+若 f1[i]<f1[j]+w[i][j]，f2[i]=f1[i]，f1[i]=f1[j]+w[i][j]；
+否则，若f2[i]<f1[j]+w[i][j]，f2[i]=f1[j]+w[i][j]；
+理解：这样做就是，先看能否更新最大值，若能，它的次大值就是原先的最大值，再更新它的最大值；若不能，就看能不能更新次大值，若能，就更新，不能就不管它
+这样的话，最后的答案 answer = max { f1 [ i ] + f2[ i ] }
+
+
+
+
+
+
+1376.素数筛法：O(n)复杂度
+int v[maxn],num[maxn];vct pp;//num[i]表示i不同的质因数个数
+void get_prime(int x)
+{
+    for(int i=2;i<=x;i++)
+    {
+        if(!v[i])
+        {
+            pp.push_back(i);
+            num[i]=1;
+        }
+        for(int j=0;j<pp.size() && i*pp[j]<=x;j++)
+        {
+            v[i*pp[j]]=1;
+            if(i%pp[j])num[i*pp[j]]=num[i]+1;
+            else {num[i*pp[j]]=num[i];break;}
+        }
+    }
+}
+
+
+
+
+
+1387.大整数类型__int128 (大部分OJ都可用！)
+__int128不支持cin,cout,scanf,printf对其定义的变量的输入输出，需自己另写输入输出函数。
+经测试，可输入输出至多38位的数字。
+所以最高可以表示Pow(2,100)的数
+即2的100+次方都能表示！！
+int128模板:
+
+但请注意,__int128 code::blocks编译不了，只有在Linux环境下能够使用
+但是clion可以!clion nb！
+
+可以选择直接把#define int long long 改成: #define int __int128
+
+#include <bits/stdc++.h>
+using namespace std;
+inline __int128 read(){
+    __int128 x=0,f=1;
+    char ch=getchar();
+    while(ch<'0'||ch>'9'){
+        if(ch=='-')
+            f=-1;
+        ch=getchar();
+    }
+    while(ch>='0'&&ch<='9'){
+        x=x*10+ch-'0';
+        ch=getchar();
+    }
+    return x*f;
+}
+
+inline void print(__int128 x){
+    if(x<0){
+        putchar('-');
+        x=-x;
+    }
+    if(x>9)
+        print(x/10);
+    putchar(x%10+'0');
+}
+
+int main(void){
+    __int128 a = read();
+    __int128 b = read();
+    print(a + b);
+    cout<<endl;
+    return 0;
+}
+
+二分模板1:(由中间向下取)
+//注意!最后输出的l并不一定在初始的l-r之间,即最终的l可以>r!!
+//多少多
+int l=0,mid,r=n;
+while(l<=r)
+{
+    mid=(l+r)>>1;
+    //mid=l+r>>1;
+    if(can(mid))//答案在中间以下
+    {
+        r=mid-1;
+    }else{
+        l=mid+1;
+    }
+}
+cout<<l;
+
+r多（多少多）l少（少多少）
+即r>l
+口诀：多少多r、少多少l
+//少多少
+二分模板2:
+//注意!最后二分出的l并不一定在初始的l-r之间,即最终的l可以>r!!
+//所以如果要判断l是否合理还要加上 if(l<=begin_r && can(l))..
+int l=0,mid,r=n;//注意,此时r不能=LLONG_MAX,因为下面会加一爆出去,所以最多LLONG_MAX-1;
+while (l < r)
+{
+    mid = l + r + 1 >> 1;
+    if (can(mid)) l = mid;//答案在中间以上,即第一个满足条件的传入值
+    else r = mid - 1;
+}
+cout<<l;
+
+
+.求回文子序列个数
+int f[N][N];
+int dp(int l,int r)
+{
+    if(l==r)return 1;
+    else if(l>r)return 0;
+    else if(~f[l][r])return f[l][r];
+    if(k[l-1]==k[r-1])return f[l][r]=mod(dp(l+1,r)+dp(l,r-1)+1);
+    else return f[l][r]=mod(dp(l+1,r)+dp(l,r-1)-dp(l+1,r-1));
+}
+out(f[1][n])
+
+两个for:
+fu(j,1,n)
+{
+    fd(i,j,1)
+    {
+        f[i][j]=k[i-1]==k[j-1]?f[i+1][j]+f[i][j-1]+1:f[i+1][j]+f[i][j-1]-f[i+1][j-1];
+    }
+}
+
+
+
+1395.注意开O3优化会导致clion debug 不了！
+
+
+
+
+
+
+
+
+1409.缩点模板待整理
+
+
+
+1416.字符串匹配shiftand算法
+特别nb,一个非常好的例题，也很好记
+https://vjudge.net/contest/385985#problem/B
+核心算法就是:
+//Ans先左移后+1，在与当前文本串字符对应的bitset&，得出Ans，位数上有1代表到这有这么长的匹配成功！
+Ans<<=1,Ans.set(0);
+Ans&=num[val];
+if(Ans.test(n-1))out(k.substr(cnt-n+1,n))
+
+一个非常好的算法讲解页面:
+https://blog.csdn.net/silence401/article/details/77446537
+
+1417.AC自动机
+
+AC自动机题目的适用复杂度是1e6-1s
+
+一个常见 trick：如何把一个串的子串转化到 AC自动机上
+把字符串的所有后缀插入字典树，再构建 AC 自动机，就可以得到相应的所有子串了。
+并且now每次变化都val[now]++;//而不是在整个串insert完再val[now]++;
+
+ac自动机你在套模板的时候要注意一个事情:你收录的模板是以默认输入都是小写字母的，所以你的存储都是i-'a'
+另外，如果输入还含有大写字母，除了i-'A'外，还要扩充数组容量！
+
+AC自动机fail数组的含义、对比AC自动机的fail指针与KMP中的next指针：
+1.共同点-两者同样是在失配的时候用于跳转的指针。
+2.不同点-KMP要求的是最长相同真前后缀，而AC自动机只需要相同后缀即可。
+3.因为KMP只对一个模式串做匹配，而AC自动机要对多个模式串做匹配。
+4.有可能fail指针指向的结点对应着另一个模式串，两者前缀不同。
+5.也就是说，AC自动机在对匹配串做逐位匹配时，同一位上可能匹配多个模式串。
+6.因此fail指针会在字典树上的结点来回穿梭，而不像KMP在线性结构上跳转。
+
+https://codeforces.com/contest/1400/problem/F
+AC自动机+dp
+注意这里的转移，这里就不需要AC自动机中的query数组这样的操作
+因为如果一个串没有匹配成功那么当前马上要转移到的串肯定不会满足，所以需要判断一下st[now][v]就行，不用一直迭代
+以每个树上的结点作为所有状态存储点进行转移
+
+AC自动机要注意，外面定义了int now;的时候，for循环里面千万别再出现int now了，这样不是导致WA就是导致RE！
+即
+int query(string k)
+{
+ int now=0;
+ fa(i,k)
+ {
+     int v=i-'a';
+     now=st[now][v];//√
+     int now=st[now][v];//×
+     for(int j=now;j && ~val[j];j=fail[j])ans+=val[j],val[j]=-1;
+ }
+ return ans;
+}
+
+1418.扫描线求周长
+void pushup(int rt,int l,int r)
+{
+    if(mark[rt])sum[rt]=1;
+    else sum[rt]=sum[ls]+sum[rs]-(Y[ls] && Z[rs]),Y[rt]=Y[rs],Z[rt]=Z[ls];//
+}
+void update(int rt,int l,int r,int L,int R,int val)
+{
+    if(L<=l && r<=R)
+    {
+        mark[rt]+=val;
+        Y[rt]+=val,Z[rt]+=val;
+        pushup(rt,l,r);
+        return;
+    }
+    MM;
+    if(M>=L)update(lson,L,R,val);
+    if(M<R)update(rson,L,R,val);
+    pushup(rt,l,r);
+}
+
+.扫描线坑点：给定的两个点不一定是左下和右上，也有可能是左上和右下,也有可能是右上和左下，
+通过swap翻转：
+if(a[1]>a[3])swap(a[1],a[3]);
+if(a[2]>a[4])swap(a[2],a[4]);
+
+or
+
+if(x1>x2)swap(x1,x2);
+if(y1>y2)swap(y1,y2);
+
+1419.在使用可撤回并查集时需要注意merge如果两个相同则不会执行push的操作，也就不用undo
+所以使用：
+bool merge(int x,int y) {
+        int rx = Find(x),ry = Find(y);
+        if(rx == ry) return false;
+        if(siz[rx] > siz[ry]) swap(rx,ry);
+        p[rx] = ry;
+        siz[ry] += siz[rx];
+        stk.push({rx,ry});
+        return true;
+    }
+times+=merge(x,y);//!
+
+
+New 新的笔记:
+1.无向图网络流：
+对于有向图，我们一般这样对边建模：
+
+void addEdge (int from, int to, int flow){
+    edges.push_back((Edge){from, to, flow});
+    edges.push_back((Edge){to, from,  0  });
+    G[from].push_back(edges.size() - 2);
+    G[ to ].push_back(edges.size() - 1);
+}
+对无向图的话，我们可以两次 addEdge，但是没必要，我们可以写成这样：
+
+void addEdge (int from, int to, int flow){
+    edges.push_back((Edge){from, to, flow});
+    edges.push_back((Edge){to, from, flow});
+    G[from].push_back(edges.size() - 2);
+    G[ to ].push_back(edges.size() - 1);
+}
+也就是正反边容量相同。
+
+2.关于曼哈顿距离
+（i）首先小心，题目中给出曼哈顿距离并不一定指点都需要是整点！
+（ii）曼哈顿的距离千万不要记错：
+abs(x1-x2)+abs(y1-y2);//√
+abs(x1-y1)+abs(x2-y2);//×
+eg:https://codeforces.com/contest/1032/problem/D
+
+3.不要忘记最原始的找错方法：
+随便构造一组样例去测试
+这有时会比傻傻地嗯debug好很多，因为可能仅仅是写挂了或者公式写错了
+
+4.
+前序(根左右),中序(左根右),后序(左右根)
+
+5.pb宏定义比push_back慢很多！
+
+shuqian书签sq sq
+
+1.关于double数的表达：
+double这个类型有一点特殊，在scanf和printf里面的表达方式是不一样的。
+在scanf里面需要用%lf表达，在printf里面需要用%f表达。
+
+2.priority_queue<T, vector<T>, greater<T> >x；//队列是从小到大的优先级队列
+
+3.当对string对象进行substr时，如果起始坐标(第一个参数)大于string总长就会在弹出的命令行窗口显示：
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 1) > this->size() (which is 0)
+
+4.有效数字
+float:6~7
+double:15~16
+long double:18~19
+long double 用%Lf 输出 输入
+
+5.C++ 迭代器的next和prev,只适用于c++11
+
+6.比赛的电脑很有可能是XP系统，如果这样的话就不能在弹出的窗口复制粘贴了，
+这种情况一定要实现准备好重定向管道输入输出，好好复习并记住这个，不要忘了
+
+7.用cin输入时，不可在连用cin>>的情况下结合n++或者++n使用，会出现很奇怪的错误
+但不可以cin>>a[k]>>a[k++] 也不可以cin>>a[k++]>>a[k]
+
+8.!""是false; 而!''或者!('')都会报错
+
+9.出现很奇怪的错误，一般是代码问题，自己多顺着代码运行看看，这样找错很多时候会比printf快！！
+
+10.网格题（尤其是在网格中移动题） 不仅要考虑超出边界需排除，更要考虑如果点移动到了边界上，会不会有什么特殊情况！！ 尤其是这种移动的东西是个圈的情况！！
+
+Dilworth定理：对于一个偏序集，最少链划分等于最长反链长度。
+也就是说,把一个数列划分成最少的最长不降子序列的数目 = 这个数列的最长下降子序列的长度。
+
+Dilworth定理的对偶定理：对于一个偏序集，其最少反链划分数等于其最长链的长度。
+也就是说,把一个数列划分成最少的最长不升子序列的数目 = 这个数列的最长上升子序列的长度。
+
+注意，两个定理等号前面的是大于等于或小于等于，等号后面的是不含等号的！
+
+11.遇到有环的计算问题，不妨将其转换成2*n的链！尤其是区间DP
+然后如果要求最小的，在最后一步那长度为n的函数去遍历就行！！
+
+12.判断是否是统一欧拉路，可以用并查集！
+
+13.c++保留小数输出： cout<<setprecision(2)<<fixed<<d[j]<<endl;//意为保留两位小数输出
+
+14. 对于时间的题，用%02d是最佳
+因为时间是 02:20这样的！
+以后出现类似的情况（空格也是一样）要想到这个！
+对于输入时间是 02:20
+这样子读入！！scanf("%d:%d", &h1, &m1);//中间保留冒号！
+
+15.对于除法题，完全可以转换为分数存储题，用map存储
+用pair<int,int>表示分数
+这样可以避免浮点误差！只要数据一大就会产生很致命的浮点误差！：
+9999998/99999999与1000000/10000001在计算机下是相等的
+
+16.正难则反
+
+17.做到回文矩阵的题，可能会反复用到翻转位置，那么最好定义一个函数：
+int rev(int i) { return n - i - 1; }
+
+18.学会用优先队列做贪心题或者其它
+
+19.priority_queue<pair<int,int>> q;优先队列对于pair排序 以第一个参数为主关键词排序(从大到小)!
+
+21.返回一个数组中最小的数的索引（最大数同理）
+min_element(Ans,Ans+7)-Ans
+
+22.一个陷阱
+int j;
+fun(j)cout<<j;//注意！你用了两个int j,所以在这for循环里面的j跟外面的j没有任何关系！
+cout<<j;//输出123234，也就是说，int j时没给他初值！
+
+23.有时候，在认识到出了什么错之后，直接重新编写程序也许会比修正原来的程序好！
+
+24.在string 中查找某个字符用find
+若未找到则返回-1
+用~k.find(aim)来表示是否在string内
+用法：
+if(~k.find(aim))//如果在子串里面，到这里
+else//如果不在子串里面到这里
+
+25.准备手表，做计时器！
+
+26.结构体存入的时候注意数值要和元素对应，不要位置搞反了
+
+27.关于log的一个陷阱！！
+cout<<log(8)/log(2);//输出3；
+int u=log(8)/log(2);
+cout<<u;//输出2！！！
+也就是说只要用到log，不能直接给int声明
+如果要实现取整效果，必须加上round！！
+int u=round(log(8)/log(2)); cout<<u;//输出3
+
+28.多看tourist的程序！
+
+29.string 类型不能用来直接跟if结合判断是否为0
+比如在全局中声明string k[maxn];
+则每个k[i]都是""空字符
+但是if(k[i])是错误的用法
+只能if(k[i]!="")！！
+
+30.map默认按key从小到大排序，与value无关！
+
+31.线段树的多懒标记要注意:
+以区间乘和区间加为例
+需要对到达的点的所有乘和加都强行改变顺序为先乘后加
+即如果是先乘后加，则不变；如果是先加后乘，则改为old*mul+mul*add,然后把mul*add改为加的懒标记
+
+32.程序提交之前
+(i).数据范围
+(ii).宏定义mod的模数有没有修改或者忘了添加
+(iii).拟造样例、极端数据试一下
+
+33.图论需要考虑排除重点和重边的情况
+用到链式前向星，需要初始化mst(head,-1);
+34.前向星·反向·^
+add加边的时候每次都加上++index的边两条,第一条边也就是最上边的边的标号为0
+这样就能实现：
+偶数的边（上面的边）^1就是加一;而奇数的边，即下面的边^1就是减一
+即都为其反向边
+
+网络流的前向星设置上，边的结构体要多一个参数——from，从哪个点出发，因为要利用反向边回去加上minflow[n]
+
+35.
+Geometric sequence 等比序列
+Arithmetic sequence 等差序列
+arithmetic progression 等差序列
+Geometric progression 等比序列
+two pairs 两个一对，共4个
+subtract it的含义是减去它而不是它被什么减去
+
+36.只要在结构体内部重载定义排序规则 就能对相应的set容器 进行lowerbound了！
+priority_queue内装结构体的重载的大小关系跟其他容器正好是相反的
+
+37.mod(5*inv(4))与mod(15*inv(12))的值相等
+也就是说逆元的分数运算已经包括了分数约分了
+逆元题可以预处理、记忆化。
+
+38.左右括号、线段都可以采用转换为左端点为+1,右端点为-1的思路
+
+
+40.小数可以拆成:分子分母二元组法，进行交叉相乘比较(如果有负数要小心比较符号要反号)
+
+41.真的要去先多想想，别急着去码，多思考1、2分钟可能会带来10多分钟的简便！！
+这点很重要！还记得那句话吗，一开始先想到的思路，每个人都能想到，没什么了不起的。
+
+42.如果你想讲输出的数序列存到一个string里一定要事先确定输出的数不会超过9
+这很重要，因为你存到string里是利用a[i]+'0'存的，而没有10这个单个字符，string加上的就会是':'
+所以这时候就只能用数组存，数组输出
+
+43.二维问题可以考虑独立地拆成两个一维的问题
+
+44.5e5的数据,O(n*√n)还是能过的
+
+45.矩阵的赋值方法:
+const int A4[4][4] = {
+    {8, 9, 1, 13},
+    {3, 12, 7, 5},
+    {0, 2, 4, 11},
+    {6, 10, 15, 14},
+};
+
+46.1LL不能改变数据的类型，所以取消longlong之后，还要把可能成为longlong的类型改成ll，否则即使使用1LL也无济于事
+
+47.考虑能否通过小结论来缩小数据范围:
+例题：求最小合并次数使得一个不减序列出现逆序数（每次合并操作为相邻两数异或后用新数替换两数）
+易得的小结论：相邻三个数如果最高位数相同则直接输出1
+=>由于抽屉原理，如果n>60则必有相邻三个数最高位相同=>输出1
+=>n的数据范围缩小为60！
+
+48.fu(i,7,13)ans+=(x>>i&1<<i);//这条语句就是将x的第8位至第14位复刻给ans，一模一样，而非倒过来
+
+49.矩阵的赋值方法:
+const int A4[4][4] = {
+{8, 9, 1, 13},
+{3, 12, 7, 5},
+{0, 2, 4, 11},
+{6, 10, 15, 14},
+};
+
+50.声明vct时同时往其内装入n个相同元素:
+vct p = rk = vct(16, 1);
+fa(i,p)cout<<i;//输出1111111111111111
+
+51.比赛的时候多动动笔，列方程，对未知量设未知数
+
+52.线段树注意点
+.填线段树数组上限的时候要注意不要把n和m搞混了，即不要把update(1,1,n)和update(1,1,m)搞错了
+.线段树记得return
+.if(M<R)gget=merge(gget,query(rson,L,R));//记得加上gget=
+.线段树的题在提交之前还是要再关注下数据范围，别开小导致wa那样很糟糕
+.线段树如果有多组输入数据的话,需要通过build来清空上一组的数据
+.线段树如果build(1,1,cnt-1);//则此时会报MLE！！你反而还debug不出来
+小心这种情况下就要注意不是去修改数据范围了，而是检查rt,l,r的合法性，简单的来说就是1,1,0是会导致很难debug的MLE错误
+.以后线段树要加上这个习惯
+使用addtag来进行修改点
+void addtag(int kind,int rt,int v)
+{
+    tag[kind][rt]+=v;
+    f[kind][rt]+=v;
+}//能方便很多以及多去用int &tmp 或者 int *tmp
+
+53.异或和小结论
+（1）4的倍数开始的连续的4个数异或和为0
+比如0、1、2、3和8、9、10、11
+（2）2的倍数开始的连续的2个数异或和为1
+比如0、1和2、3和8、9和10、11
+
+54.结构体的声明}最后是有一个';'号的
+
+55.写线段树易犯的错误
+
+56.线段树摘错:
+(1)函数在if下要切记写return
+(2)不要忘加pushup
+(3)如果题目要求就是2e5，最后就把数据改成2e5<<3，而非1e6，否则很可能会MLE！
+
+57.有时候直接用print能更快地知道程序运行到哪进行不下去了，而不一定总是去debug!
+
+58.for(auto &i:t)是能改变map的内部的
+
+59.int t=*T.begin();//这句话是没错的
+cout<<*t.lower_bound(3);//这句话也没错
+
+60.对于一个数字字符串，如果想用数组保存对应位上的数值而非char就用下面的方法:
+for (int i = 1; i <= n; i++) {
+  scanf("%1d", on + i);//注意这里是1
+}
+
+61.lower_bound也是能用于vct同时找出索引的:
+vct t;
+int index=lower_bound(t.begin(),t.end(),val)-t.begin();//返回vct中第一个大于等于val的数的索引，如果没有找到就会返回最大索引数+1，即容器大小
+int index=upper_bound(t.begin(),t.end(),val)-t.begin();//返回vct中第一个大于等于val的数的索引，如果没有找到就会返回最大索引数+1，即容器大小
+以上的索引是以0为起始下标为基础的
+
+62.min、max中size()前要加(int)
+ans=max(ans,t.size());//报错
+ans=max(ans,(int)t.size());//√，这与是否注释#define int long long无关
+
+63.如果题目给的目标串是只有小写字母组成的字符串，则要多考虑一种方法:
+以26个字母为容器，存储含有这个字母的各个位置，可以采用建立set的方式！很方便set<int>T[26];
+
+64.如果分析出
+vy2-vy1=a(vx2-vx1)
+就要把1和2变量分开=>重设&发现
+a*vx2-vy2=a*vx1-vy1
+
+65.前缀和的线段树，只要pushup稍微变一下就行
+sum[rt]=sum[rt<<1]+sum[rt<<1|1];
+MAX[rt]=max(MAX[rt<<1],sum[rt<<1]+MAX[rt<<1|1]);
+MIN[rt]=min(MIN[rt<<1],sum[rt<<1]+MIN[rt<<1|1]);
+注意一下MAX[rt]和MIN[rt],左端点不变，右端点需要加上sum[rt<<1]的值
+
+66.s[i][j]=s[i-1][j]+s[i][j-1]-s[i-1][j-1]+A[i][j];//二维前缀和
+
+67.对于二维平面的题
+如果对行和对列的操作是类似或者是相同的
+就考虑讲对列的操作翻转过来，即跟行相同！
+这样就不用专门去把对行的操作和对列的操作分开了！
+例如做前缀和时:
+fun(i)fun(j){
+numr[i][j]=numr[i][j-1]+(k[i][j]=='B');//注意只是最后的k[i][j]=='B'有所不同！
+numc[i][j]=numc[i][j-1]+(k[j][i]=='B');//注意只是最后的k[j][i]=='B'有所不同！
+}
+要注意最好使用的时候还要反回来！
+
+67.括号序列题
+可以用以下方法
+第一步、将其数值化！
+第二步、将其折线图化
+
+68.++运算符不要与>>或者<<连用，因为不同编译器运算顺序不同
+cin>>a[++ans]>>b[ans];
+改为：
+++ans；
+cin>>a[ans]>>b[ans];
+
+69.在做跟string回文串相关时
+可以考虑用reverse(all(k))判断是否回文
+
+70.umap内部没办法装结构体,要装结构体，只能通过map
+
+71.位运算的逆运算
+(1)&、|没有逆运算,所以遇到&和|的题，只能从正向在每个位置上去思考怎样才能达成目标
+(2)^有逆运算，且逆运算就是其本身！！
+也就是说
+x^y=z;
+则z^y=x;
+所以异或的运算会更加简单
+
+72.主席树空间、可持久化线段树空间开*100！
+
+73.have[++All].id=All;//UB
+
+74.如果线段树中传入了r<l的情况就会出现MLE要小心！！
+
+75.int num=unique(in(X))-X-1;
+num就是SET后的size即种数
+
+76.区间操作，每次修改将一个区间的所有数都各自几次方幂自乘，同时题目中还涉及到特殊的模数的
+这类题很可能是找规律题，就是找出每几次方这样操作k次后就会有循环，所以会涉及到打表
+
+77.对于单个字符串的某个字符如果想让其成为字符串只能如此：
+string ll="";
+ll+=k[i];
+
+78.ans=ceil((double)g/(double)h)+n;
+会输出1e9而非100000000
+int g=10000000,h=1;
+out(ans=ceil((double)g/(double)h))//10000000
+out(ceil((double)g/(double)h))//1e+7
+out((double)ceil((double)g/(double)h))//1e+7
+out((int)ceil((double)g/(double)h))//10000000
+
+79.1e6的数据不适合跑平衡树
+
+80. 先执行+-再执行==、<、>再执行&、|、^
+
+81.如果题目涉及的数据量中间运算超过1e18，但答案又确定不会超出1e18的话(注意，是会有这样的坑的，比如AGC的A题5月23日)
+中间要用long double进行比较之类，一定要在前面加上(ld)
+注意:在使用min函数的时候，如果里面比较的东西是(ld),则两个必须都是ld,所以都需要在前加上(ld)
+重点来了，这样之后，输出会是ld，是不允许的，即使是运算也是不允许的，所以要在min函数前加上(int)!!!
+eg:num=min(num,dfs(q[i])+(int)min((ld)abs(val-q[i]*w[i]),(ld)(val-q[i])*a[1]));
+
+82.用线段树可以维护区间最大连续字段和
+只需要记录每个结点的4个值：sum[](区间总和)、val[](区间最大连续字段和)、maxl[](左儿子最大后缀和)、maxr[](右儿子最大前缀和)
+
+83.差分约束中的等号关系转换为两条消息：<=和>=
+a=kb;//用差分约束只需要取log即可
+视为给出两个条件(1)a<=kb;(2)a>=kb
+
+84.看到no directed cycles
+立马想到拓扑排序！
+
+85.对字符串对赋值，也是一种方法：01->1 (11 or 00)->0 10->-1
+
+86.非permutation题,可以先考虑如何数组是permutation的情况
+考虑是否使用离散化下同元素按索引排序的方式将给定的序列转换为permutation
+序列操作难题，可以考虑从后往前或从前往后,逐步完成最后/最前的那一个位置同时保持后面的序列的相对大小关系不变
+
+87.遇到图论题,不要忘记染色法，要很自然地考虑到染色法
+
+88.将乘积问题转换为log是一种方法但可能还是会wa
+因为涉及到精度问题,但凡涉及到小数的精度都可能会wa
+
+89.abc134F
+状态定义十分重要
+定义f[i][j][k]表示到第i个,还有j个元素未放置（那么相应的，也有j个位置没放数字），能确定获得的val为k的方案数
+转移就考虑第i+1个数和位置怎么去处理
+
+90.要取对数并且以2为底，log2()就行
+要取对数并且以10为底，log10()就行
+__lg(n):log2(n)向下取整，输入n必须是整数
+区别在于__lg(n)返回整数，而log2(n)返回double，输入都是整数i
+
+91. 每次操作想要最终序列为严格递增序列的题目
+一个非常典型且常见的技巧就是对于每个a[i]都减去i;
+然后转换为不减序列
+即: fun(i)cin>>a[i],a[i]-=i;
+
+92.每个有向图，如存在环则:
+1.一个很重要的图论知识:每个环至少存在一条边从大编号节点到小编号节点，一条边从小编号节点到大编号节点
+2.一个环必然同时包含返祖边和树边两种边(换句话说:有向图中的环不可能都由返祖边或者树边组成)
+这题也可以如此:一个环必然同时包含返祖边和树边两种边，那么我们只需要将所有的返祖边染成1，树边染成2，那么一个换中就肯定不止一种颜色了
+( 那么，给第一种边染上一种颜色，第二种边染上另一种颜色，肯定不存在相同颜色形成一个环)
+DFS过程中，对于一条边u->v
+vis[v] = 0,说明v还没被访问，v是首次被发现，u->v是一条树边
+vis[v] = 1,说明v已经被访问，但其子孙后代还没有被访问完（正在访问中），而u又指向v？说明u就是v的子孙后代，u->v是一条后向边，因此后向边又称返祖边
+vis[v] = 3,z说明v已经被访问，其子孙后代也已经全部访问完，u->v这条边可能是一条横叉边，或者前向边
+//下面通过对b[i]染色让有向图不存在一个环的所有组成边颜色相同
+void dfs(int now)
+{
+    vis[now]=1;//第一次遍历到，下次遇到就是返祖边
+    fh(i,now,e)
+    {
+        int to=e[i].to;
+        if(vis[to]==1)have_cycle=1, b[i]=2;
+        else if(vis[to]==2)b[i]=1;
+        else b[i]=1, dfs(to);//vis[to]=0,代表第一次遇到,所以是树边
+    }
+    vis[now]=2;//遍历完全，下次遇到就是横断边
+}
+另外有向图判环的最简单的方式就是拓扑排序
+
+93.要敢于用int& tmp=..;//来加快速度
+
+94.线段树的区间操作很复杂
+可以考虑dp，用状态表示不同选取区域的不同情况
+然后用矩阵来完成两个区间的合并也就是转移
+所以这种题的先决条件是，题目需要的东西是两个一个区间，而这个区间可以有两个区间合并得到
+这题最关键的就是状态的定义
+f[i][j]表示从状态i到状态j所需的花费
+
+95.最短路要考虑设立超级源点
+一个非常实用且经典的技巧
+由于是无向图，存边的时候是两个方向都存，而如果当我们缩成一个点的时候就可以考虑在这双向上做文章
+即让u-v边权为x，v-u边权为0
+add(0,i,0),add(i,0,x);
+这样就实现经过超级源点时，内部路程只计算了一次x
+
+96.在判断最短路是否无解时可以如此操作:
+int num=min({INF,dis[1][b[4]+1]+dis[2][b[3]+1],dis[1][b[2]+1]+dis[3][b[4]+1],dis[1][b[3]+1]+dis[2][b[4]+1]});
+out(num==INF?-1:num)
+//这里要注意的是别让后面的dis相加>LLONG_MAX,所以要把INF的值设置好！
+int num=min({dis[1][b[4]+1]+dis[2][b[3]+1],dis[1][b[2]+1]+dis[3][b[4]+1],dis[1][b[3]+1]+dis[2][b[4]+1]});
+out(num>=SINF?-1:num)
+//用>=号很容易出错！！
+
+对于序列或者字符串的区间操作除了想到用线段树外还要考虑是否是最短路题
+
+97.区间操作除了考虑线段树、莫队以外，还可以考虑分块、分治
+
+98.计算几何注意点
+几何体输出的时候如果指定打印几个位数可能会出现-0.000的情况，所以在输出时要手动加上eps
+printf("%.4lf %.4lf\n",d.x+eps,d.y+eps);///会出现-0.000要加eps
+cout<<setprecision(i)<<fixed<<ans+eps<<endl;
+.计算几何遇到比较时是用fabs(x)<=eps
+.计算几何不要再犯这样的错误了
+double get_angle(int x,int y,int z)//当传入参数的时候，不要让原来是double的数据变成int
+{
+    return (double)2*acos((x*x+y*y-z*z)/(double)(2*x*y));
+}
+应该是
+double get_angle(double x,double y,double z)
+{
+    return (double)2*acos((x*x+y*y-z*z)/(double)(2*x*y));
+}
+.判断double是否为整数:
+return fabs(gget-(int)(gget+0.05))<=eps;
+//注意这个时候要把#define int long long 注释掉
+
+.将double下的整数化为标准的整数:
+(int32_t)(x+0.5) or
+int32_t(x+0.5) or
+int(x+0.5);//cancel #define int long long
+
+99.图论的题有些坑很恶心:
+如果是去除桥，则如果桥的最小花费是0，你得考虑是否在输出0的情况输出1，因为最少派出一个去炸桥
+另外题目没明确说有没有重边，那就是要考虑重边
+以及去除桥问题还要实现判断桥本身是否如果不连通，那才是输出0
+总之就是要尊重客观事实，充分考虑情况
+
+100.平面矩形题如果wa了就多去构造特殊情况
+例如顶点同行或同列，或三个点同时同行、同列
+或者3个点是一个矩形的3个顶点
+或者4个点是一个矩形的4个顶点
+
+101.注意,st表适用于求区间最大或最小,但不能用于区间求和
+因为st表的每次查询会有部分区间是重复的
+这种情况下考虑用线段树或者树状数组
+
+102.题目给的c<=10,那你就多给点,空间给c+5,如果仅仅c+1的话，太死了
+万一等你去写程序的时候才发现实际用到的c是c+1的话就麻烦了，白白wa
+
+103.二维固定矩形大小的询问问题往往要想到单调队列求解
+这是,并不是说让你做二维单调队列，而是将二维转换为一维，先处理出横向的，再处理纵向的
+不过两次处理要更换数组，也就是第一次求出的横向的放到另一数组里，在纵向处理这个数组！
+
+104.先按某个关键词排序再进行dp其实是一个比较常规且典型的操作了，要学会多去掌握这种排序的艺术
+有时候你得先将其排序再去思考这么做的意义或者说有没有意义
+排序能保证如当前变量不去选取其它参数那么本参数一定对答案没有影响，因为比它更大的前面有（不正是排序带来的效应么）。
+
+105.如果是cout<<(1?num--,val:VAL);//则输出的是val
+而如果是cout<<(1?val,num--:VAL);//则输出的是num!
+也就是说三目运算符优先输出分句中后面那个的值
+
+106.关于树，9个结点的时候可能是特例
+
+107.访问全局变量::n
+否则就是使用函数内已声明变量
+
+108.不要犯这种低级错误,传入参数使用的是num，结果莫名其妙地写成n?!
+
+109.将char[]字符串取m位并生成string类型:
+char k[maxn];
+void solve()
+{
+   R(k);
+   string h=string(k,k+3);//在这！取k[0]-k[2]
+   out(h)
+   return ;
+}
+string(n,Char);//将char字符赋值n个并生成一个字符串！很实用
+char k[maxn];
+void solve()
+{
+   R(k);
+   string h=string(2,k[0]);//若k=qwer,则h=qq
+   out(h)
+   return ;
+}
+
+110.单调栈需要注意的点
+一定注意，我们存放的一般是下标，而不是元素。但是作为比较的标准是下标对应的元素。
+切记，单调栈存的是索引.存索引的思想很重要,保证了遍历的顺序
+
+111.注意，if语句有可能不是按从左到右去判断的:
+if(n>=3) if(K.substr(n-3,3)=="RLR"){ out("impossible")return; }
+if(n>=3 && K.substr(n-3,3)=="RLR"){ out("impossible")return; }
+运行的结果不一样
+
+112.遇到坐标系的点的问题，考虑下能不能横坐标、纵坐标独立考虑
+
+113.末尾是1、3、7、9的 乘某个数后的积的最末一位能取遍0-9
+
+114.状压题考虑事先预处理
+
+115.字符串周期问题 Periodicity Lemma
+p和q是字符串s的周期，p+q-gcd(p, q)≤|s|,则gcd(p, q)也是s的周期。
+
+116.遇到线段树的题多去想想能否用dp去转换
+Problem D. Decisions(第一次开火车D题)
+这题真好，f[i][j]表示前i个元素取和为j的第一个数的最晚出现位置！
+
+117.切记在进制转换题中，如果要一边求此次余数，一边除模数
+则要实现保存原数组:
+fu(i,j,len)t[i]=a[i];//实现保存原数组
+fu(i,j,len)
+{
+   val=mod(mod(val*mod(x))+mod(t[i]));//
+   a[i+1]+=a[i]%y*x;
+   a[i]/=y;
+}
+
+118.当很多人都过一道题的时候你要猜想它会不会是一个结论题
+
+119.如果不用mod宏定义的话
+想要纠正负数的取模%其实很简单，不用一直加模数到正数
+直接Fu%m;if(Fu<0)Fu+=m;//这样就行了
+
+120.不要忘了计算每条边的贡献这个方法
+有那种计算n个点n?的图论、树问题，都要切记这个思想！！！
+n->1e5
+
+121.for循环中别把i和j搞混
+
+122.将小数*1e9使之转换成整数是极有可能存在精度问题的
+所以最好的解决方法就是读入字符串，将其转换成字符串去做
+并不是说一定要用高精度，反正总会有办法解决的
+将小数格式的整数转换成int类型的整数:小数转整数（强烈推荐）
+或者使用如下语句才能准确无误地将小数格式的整数转换成int类型的整数:
+int y=llround(x * 1e9)
+
+123.
+n向上取整:n+1>>1
+n向下取整:n-1>>1
+
+124.树、无向图 输出路径除了递归输出还有更简单的方式就是用p[i]=now记录父亲结点，然后一直while回溯
+eg:
+p[i]=now;
+cout<<i<<" ";
+while(p[i])cout<<(i=p[i])<<" ";
+cout<<endl;
+
+125.下次20分钟没有做出来的赶紧就应该换一道题看，最起码把其它题面看一下也比死磕一道题来得好
+万一这道题就是防AK题那你就完了，而你看题是无论如何都逃不开的！！所以真真别死磕一道题，这不是cf
+只有看更多的题，才能保证先去做能过率最高的题
+
+126.在重载排序的时候，如果对象是有分母并且你想通过乘法来比较的话，一定要小心分母是负数，这个时候符号要变号！
+bool operator<(const node&a)const{
+   if(!kfm)return 1;
+   else if(!a.kfm)return 0;
+   else return (a.kfm*kfm>0)?kfz*a.kfm>a.kfz*kfm:kfz*a.kfm<a.kfz*kfm;
+}
+
+尤其是在比较两个直线的斜率的时候，常会用到
+
+另外要注意的是，如果是比较两个直线斜率的话，还要考虑到分母是否为0
+所要之前还要加上
+if(!kfm)return 1;
+else if(!a.kfm)return 0;
+
+127.注意，在所使用的add链式前向星中总边数是cnt个，但遍历时是从0到cnt-1
+
+128.如果以后遇到数据范围是long long级别的
+1<<(i-1)这样的语法是错误的！！
+以为这个句子会自动识别为int而不是long long
+解决方案:1LL<<(i-1);
+
+129.前者是WA,后者AC
+cout<<"Case "<<(++case_of_T)<<": "<<endl;
+cout<<"Case "<<(++case_of_T)<<":"<<endl;
+
+130.dinic算法的复杂度上是n^2*m,一般能处理1e4~1e5的数据
+特别地，在求解二分图最大匹配问题时，可以证明 Dinic 算法的时间复杂度是sqrt(n)*m。
+
+131.以后宁可多花一分钟多去造一个小样例或者把已经有的样例都测一下也不要马上就交
+毕竟如果wa了一次相当于20分钟没有提交！
+
+132.遇到模数问题一定一定要小心,必要要排序的话，放入排序的东西千万不能加mod
+因为排序是要原本的值作为排序依据的，如果你加了mod会导致值改变
+
+133.bfs不应该是直接暴力
+而是思考能否优化，比如一些比较极限的数据你就必须要通过优先队列去优化步数
+让步数小的在前面，等到了目标位置的时候就直接输出，因为你是通过优先队列排序后的，所以第一次出现的步数一定最优！
+
+134.最小割最大流定理: 网络流的最大流量等于最小割的所割断的流量
+
+135.费用流一般都是要注释掉#define int long long 的,否则很容易TLE，尤其是用SPFA的时候
+
+136.对于要频繁mst(vis,0)的题，考虑能不能不去清零，而去判断vis[i]==now;//now为每次处理的当前编号
+
+137.区间询问问题=>线段树解法：
+这题的建树的定义非常非常重要且经典且巧妙
+首先对于所有的询问，采用离线的方式处理
+构建所有的query[maxn] vc<P>
+其中query[i]表示r=i的所有询问，然后query[i]={l,id}//即fi集合i就是询问区间(l,r)<=>(query[i].fi,i)
+而se就是原询问的id，因为是离线所以要实现记录id，最后再按顺序输出
+下面重点来了，遍历i（即r）从1->n
+然后读取a[i](即a[r]),然后更新线段树
+其中线段树的每个叶子结点st[rt]存储的是从rt（对应的l）到当前的i（即当前的原数组的r）的位置的ans
+那么这样就在遍历的r从1->n的过程中就考虑到了所有可能的(l,r)：(1<=l<=n,1<=r<=n)
+一句话总结就是每个线段树的结点都是存储的是(i,r)，而我们迭代的是r从1->n
+拿来更新的是遍历到的当前的a[r]
+
+138.https://codeforces.com/contest/1404/problem/E
+这道题展示了一个很经典的技巧，对砖块图，采用对两个相邻的砖块的接触的那条边作为顶点建图
+则原图转换为由竖向边与横向边形成的点构成的二分图
+而连边则结合具体题目相连，在本题中就是把L型的边连边，也就是把每一条竖边都向四个方向连边
+这时候，dx和dy为:const int dx[]={0,0,1,1},dy[]={0,-1,0,-1};//down up left right
+定义顶点为:
+if(k[i][j-1]=='#')id1[i][j]=++a[1],ans--;
+if(k[i-1][j]=='#')id2[i][j]=++a[2],ans--;
+
+139.匈牙利算法中的mst(used,0);实际上没必要
+太耗时间了，用:
+fu(i,1,a[1])
+{
+   a[3]++;//代替mst(used,0);
+   if(Find(i))ans++;
+}
+并对Find改进为:
+if(used[i]!=a[3])//注意这里！
+{
+   used[i]=a[3];//注意这里
+   if(!f[i] or Find(f[i]))
+   {
+       f[i]=x;
+       return 1;
+   }
+}
+
+140.字符串的布尔运算符判断所耗费的时间远大于简单整型的判断:
+即if(k[i][j]=='#')的时间远大于if(f[i][j]==1)的时间
+
+141.有时候就是需要开2倍空间的，也不知道原因是什么
+
+142.一个超级大坑，debug 1小时:
+fun(i)cin>>k[i],k[i]='*'+k[i];//直接导致程序错误
+fun(i)scanf("%s",k[i]+1);//AC
+所以以后字符串读入题，还是用C吧，还能加快程序！！
+此时的数组是:char k[N][N];
+
+143.最小树形图，就是给有向带权图中指定一个特殊的点root，求一棵以root为根的有向生成树T，并且T中所有边的总权值最小。
+
+144.求期望的问题，期望就是累计每个对象的贡献，某个对象的贡献：Σ每种可能性*该可能性下的值
+
+145.扩展kmp（又称z函数）：
+给出s、t串
+求s串中所有的后缀与t串的最大公共前缀长度，存入到数组中
+
+146.字符串字典序比较、比较两个字符串的字典序大小
+大小比较定义：关于字符串的大小比较，是指通常所说的“字典顺序”比较，也就是对于两个字符串u、v，令i从1开始顺次比较u[i]和v[i]，如果u[i]=v[i]则令i加1，否则若u[i]<v[i]则认为u<v，u[i]>v[i]则认为u>v（也就是v<u），比较结束。如果i>len(u)或者 i>len(v)仍比较不出结果，那么若len(u)<len(v)则认为u<v，若 len(u)=len(v)则认为u=v，若len(u)>len(v)则 u>v。
+
+147.基数排序:基于关键词的排序（默认是从小到大排序）
+另外一层:如果实现已经有足够的数组空间并且数组中的所有数的最大值(m)不大且最小值>=0,对一个数组的排序的复杂度只需要:O(n)——O(3*n+m)//m为所有数字中的最大值
+PS:由于如果是对字符串进行排序的话就默认了每个字符大小不大，所以非常适宜用基数排序
+
+148.把Umap+树状数组改成int+离散化+树状数组，时间能加快10倍以上！
+直接从TLE到AC！
+另外，不用改成C，没必要
+再者，通过注释#define int long long ，然后各种加1LL也能加快程序速度，但不大
+都远不如使用int+离散化来得快！
+
+150.deque也是可以sort的！！
+
+151.相交问题(如果单个点相交不算相交则下面的式子都要加上等号)
+数轴上两线段相交满足的条件是L1<R2 && L2<R1
+平面上两矩形相交满足的条件是 矩形1的左宽<矩形2的右宽、矩形1的左长<矩形2的右长
+立方体上相交的条件就是三个维度的交叉
+平面和立方无法利用set来方便查找和计数
+
+152.如果dp方程是通过f[i+1][j-1]来的,那么使用函数递归(+记忆化)来完成转移会更好写，但是可能会TLE
+
+153.如果题目要求是对2^32次方取模，那么就是让你用unsigned int 去进行自然溢出
+同样道理，如果是2^64取模，那就是用unsigned long long 去进行自然溢出！！
+不用再mod()了
+
+154.typedef 的高级用法:
+typedef int nothing[5];
+nothing h;
+h[3]++;
+
+155.利用tie和tuple能完成类似python里的对应赋值(可用在主席树中)
+这一行代码:tie(ls[now],rs[now],mul[now]) = make_tuple(ls[x],rs[x],mul[x]*v%mod);
+相当于:ls[now]=ls[x],rs[now]=rs[x],mul[now]=mul[x]*v%mod;
+也就是说如果要用多个（不仅仅是3个）对应赋值，那就用tie-tuple的方法
+
+156.AC自动机的题要考虑有多个相同串而具有不同的属性
+
+157.对于一个图判断其能否分成二部图且这两部，各自内部的点之间不存在边相连
+就是判断对于这个图是否存在奇环，存着则不能分成，反之则能。
+
+158.构成直角三角形的A、B、C（其中C是斜边）：A=m*m-n*n;B=2*m*n;C=m*m+n*n; ->A+B=C
+
+159.如果不断地声明同一个变量，eg:for .. int f[4]={1,2,3,4};
+前面加static const 会加快一点点:static const int f[4]={1,2,3,4};//效果与只声明一次的复杂度相同
+
+160.遇到模数问题或者hash记得优先取消#define long long
+
+161.1LL无法应用到括号里面，所以仍需加1LL
+hs1[i]=1LL*(1LL*hs1[i-1]*bs1+k[i-1]-'a')%MOD1;//√
+hs2[i]=1LL*(hs2[i-1]*bs2+k[i-1]-'a')%MOD2;//×
+
+162.注意，CDQ分治是离线的
+
+163.比赛前须知
+(i)如果是下午比赛，一定要在比赛前花半个小时以上睡觉
+(ii)先去看一遍数据范围找到最像签到题的题，以减少罚时
+(iii)如果没有很好的思路，思考排序是否优化，再dp、打表、二分;再思考线段树、搜索，再想结论去试、缩小范围
+(iv)如果wa了重新码一次也是一种没有办法的办法
+(v)别人都会自己不会的题可能就是暴力
+(vi)读题要仔细且慢
+(vii)提交时注意题号，别交错了
+(viii)初始化
+
+164.通过scanf输入的时候如果前面没加~号可能会导致程序TLE
+
+165.
+
+提醒：
+计算几何模板:
+
+切记三角形的三心别搞混了:
+垂心:三条高线的交点,在直角三角形中,垂心是直角点
+外心:三条中垂线的交点,是三角形的外接圆的圆心
+重心:三条中线的交点,重心到三角形3个顶点距离的平方和最小
+内心:三条角平分线的交点,是三角形内切圆的圆心
+旁心:不重要
+
+PS:别把外心和垂心搞混了
+
+求垂心:(已知3顶点坐标)
+double point[maxn][3];
+pair<double,double> orthocenter(int x,int y,int z)
+
+
+比赛笔记:
+
+输出优化代码：
+
+void print(int x)//这里当然不用实参
+{
+    if(x<0)//负数
+    {
+        putchar('-');
+        x=-x;
+    }
+    if(x>9)//只要x还是2位数或更多就继续分解
+        print(x/10);//这里递归完后栈里面x的每一位是倒过来的（关于递归，我也实在解释不清楚，各位去看看神犇们的递归解释吧）
+    putchar(x%10+'0');//输出（要把int型变为char型，加'0'即可）
+}
+
+据说能够快一点，在数据量特别大的时候，这个输出优化代码的博主，用了10万数据做测试，然后发现快了0.2s,也就是说200毫秒，哈哈，说不定你就差着200毫秒就ac了，你值得拥有。
+
+箴言：
+
+在思维的迷宫里，有的人凭借天生的灵感直奔终点
+有的人以持久的勤勉，铸造出适合自己的罗盘
+有的人迷失了方向，宣告失败
+
+以后，要沉稳！不要说很轻佻、让人看轻的话！
+
+每当你在感叹："如果有这样一个东西就好了"的时候，请注意，其实这是你的机会。
+
+天才就是有无止境刻苦勤奋的能力
+
+生活不会亏待那些努力的人，也不会同情那些假装奋斗的人。
+不要让未来的你，怨恨今天的自己。
+
+"傻逼题做复杂是会退役的啊；傻逼题都做错是会退役的啊。"退役了啊。
+
+想要跳的比别人更高，就要蹲的比别人更低
+
+大多数人在开始努力之前，都认为努力这个词做起来和说起来一样简单。
+
+我曾踏足山巅，也曾坠入低谷,二者都使我受益良多。
+
+命乃失败者之借口；运乃成功者之谦辞
+
+就像在夜里注视着一颗明星，却发现周围的星星更亮更光。
+
+It's the game!
+
+并不是每一件算的出来的事都有意义
+也不是每一件有意义的事都能够被算出来
+
+希望每一个努力生活的人都能把自己的人生AC
+
+一直奔跑总会有出头之日的
+
+实力才是唯一的通行证，而不是关系
+
+很多时候，我们觉得轻易看透了一个人，不是因为他不会隐藏，而是因为他和过去的自己有相同之处
+
+不要轻信别人无故的赞美，要思考他称赞的动机。
+
+睡觉前默默问自己——如果今天可以重来，我会希望重新来过吗？不要欺骗自己，这样可以很好的检讨一天得失。
+
+尽量闭上想要炫耀的嘴,如果非要说,一定多一句抱怨
+
+拼尽全力只为获得廉价认同感的人，很容易被丢弃，聪明的人会努力让自己成为非必需品，但却人人想要。
+
+什么东西都会一些的人，适应性很强；有一项专长特别牛逼的人，被需求度很高。
+
+强者和弱者最大的区别，是弱者只会拾人牙慧，自诩高明，在低贱的节奏里不停高潮；而强者向来讷言敏行，孜孜不倦，为高尚的目标不断前行。
+
+有一句话说的无比正确：小孩子才看对错，成年人只看利弊。
+
+抖音=B站=百度新闻，别刷抖音了.有这闲工夫不然打一盘游戏呢,抖音，短视频，无穷无尽，别再想“看完这个就结束了”.
+
+Rainy Season, having the hard way with you
+
+攒了半个月没洗的头发，今天终于洗了。洗完头发的水全是掉落的染发剂的颜色，掩盖了本该让我难为情的浑浊颜色。今天卖了去不成的伊藤润二画展门票，吃的菠萝很甜，信用卡又可以提临时额度了，我又发现自己喜欢听的歌。我现在好像什么都没有，又好像全部都拥有了。
+
+一开始都是一样的，大家都是和和气气，都觉得自己是新手，刚入行的，一开始，大家都一样。
+慢慢地，过了一段时间之后，你就会发现有人成绩特别好，但是自己也不差，甚至比他努力多了。
+再过很久之后，差别就出来了，他的实力增长地很快很快，甚至和前辈也相差无几，而自己就真的只是个普通人。
+这时候你会意识到，原来此刻，我是没他那么努力的。或者你会发现，其实，他只是做到了一件事，不是努力，也不是拼命。
+而仅仅是坚持而已——坚持不松懈比无法持久的努力强大太多。
+
+梦想，一个熄灭后再有一个就很难了。
+
+人一旦有了自信，就会赢得一切。
+
+拯救？不需要，生活会给予那些不勤奋的人一耳光，然后逼迫他继续向前，人不需要拯救，只是缺乏压力罢了
+
+未知全貌，不予置评
+
+《来自lol匹配机制的讨论》
+曾经在某个12线小县城,白银5,以为自己是个王者，后来游戏打不过，成绩也不及格，发现想多了。
+到了大学,努力学习，以为能改变世界!直到回到小县城，工作了几年，才发现原来我才是最底层的渣渣..
+适度游戏，好好学习,珍惜每一次人生转折的机会，因为机会往往只有一次。
+不论中考、高考、考研还是期末考试，甚至是一次小小的作业，千万别偷懒。
+山外有山，人外有人，千万别让游戏耽误了你前进的步伐、探索世界的脚步!
+遇到困难别逃避，早晚得面对现实，每天进步一点点谢谢你翻到这里，加油!
+
+搞怪的不是timing而是我数不清的犹豫
+
+如果把game比作一堂课，那么思考便仿佛作者布置给玩家的作业，其中种种绝非人物的对话就能足够充分地表达。
+
+好像置身水底，周遭的声音透过水流渗到湖底，变得模糊暧昧。湖面的冰开始化了，湖水伴着碎冰，阵阵凛冽的水流从我身边划过，带走我身上的丝丝暖意，但是我只想这样躺在湖底，直到沉沉睡去。
+
+现实是不会看到你的努力的，现实甚至不知道你是谁，所以别指望努力就能成功，踏实一点，一步一个脚印踩才是走路的正确方式。
+失败是常态，失败后需要的不是消极怠工咒骂老天，二是需要认识错误，反思自我，哪些是能够拯救的。
+现实又是唯一会看到你的努力的，一切星点成功的背后都是你至今为止所有的努力支撑的。
+
+《爆裂鼓手》:世界上没有任何一句话坏过于"good job";
+是什么拉开人与人之间的差距:自我满足;
+"哦，我做的还不错"是弱者失败的原因及可耻之处;
+得意是阻碍伟大的藩篱;
+
+不逼自己一把,你又怎能知道自己如此卓越。
+
+能不能保持注意力是分辨出成功与失败学生的关键。
+
+学的简单了，大脑无聊，不行,学的太难了，大脑紧张，也不行
+应该学习有一点点挑战的知识，让挑战与你的能力相匹配，进入到最佳学习状态——心流状态。
+什么是心流状态？
+回想一下，你是否体验过全身心沉浸在某件事情中，完全忘记了时间的流逝？
+比如是你还差几十块就要完成一幅拼图的时候。
+你在享受这个挑战的状态，你知道自己一定可以成功！这种状态，被美国著名心理学家米哈里·契克森米哈赖命名为“心流”。
+
+学习40分钟，休息5分钟现在你已经找到合适的学习难度，进入了心流状态。但过了几十分钟，你发现自己的效率又开始低下，注意力又不集中了。这是因为大脑的工作原理和电脑有点类似，我们不断地往大脑中输入新的知识，就像在电脑中不断打开新的程序，内存占满了，大脑必然会像电脑一样死机。我们需要给大脑留出处理信息的时间，让它先处理好我们这一阶段输入的内容，再开始下一阶段的学习。通常，大脑在学习40~50分钟的时候，会出现暂时的资源利用饱和状态，不仅效率低下，记忆力也会开始减退，这时候就需要休息5分钟左右，让大脑在后台将“缓存”清空。
+还有一点要注意的是，休息时请放空你的大脑，不要给它额外的刺激或信息输入，否则就和没休息是一样的。
+如果你在休息的时间，刷抖音、朋友圈，别说你能不能在5分钟后停下来，就是这5分钟内的信息刺激，也无法让大脑得到很好的休息。最好的选择，就是抻抻懒腰，站起来活动活动，眺望下远方等等。
+
+下次分心或者浪费时间的时候，多 花 时 间 去 发 现 并 找 到 让 自 己 分 心 的 源 头 ！
+或者说起因或者说是某个行为，要知道让你分心的源头，想办法克服它。
+
+真正能吃苦并且能坚持吃苦也算能力之一，而且是很稀有的能力
+
+请享受无法回避的痛苦
+
+最让人看不清的是什么？是黑暗中的人影嘛？不是，是强光中的轮廓。
+
+人活着有很多事，都可以得过且过，但是在选择的当口，必须要全神贯注，而在确认了选项之后，就应该全力以赴、不留遗憾。——《猎场》
+
+世界上偶然的事太多了，但剩下的，就都是必然的了。
+
+Think twice, code once.
+
+每一个你不满意的现在，都有一个不努力的曾经。
+
+节制
+慎言
+条理
+坚毅
+节俭
+勤奋
+真诚
+正直
+适度
+清洁
+心静
+贞洁
+谦卑
+
+你才二十多岁，没遇到喜欢的人很正常，往后你会发现，大概是遇不到了。如果一个人秒回了你，也只能说明这个人在玩手机而已。等你以后老了，走不动了，我就每天用轮椅推你到广场上去，让你看着我和别的老头跳舞。
+
+先想想十年后你希望自己在干什么，再反推。
